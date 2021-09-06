@@ -1,0 +1,13 @@
+service challenge
+{
+    disable = no
+    socket_type = stream
+    protocol    = tcp
+    wait        = no
+    user        = root
+    server      = /usr/bin/python3
+    server_args = -u /root/challenge.py
+    type        = UNLISTED
+    port        = 1337
+}
+

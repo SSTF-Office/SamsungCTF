@@ -1,0 +1,88 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+p {
+  font-size: 12pt;
+}
+
+textarea {
+  width: 100%;
+  height: 300px;
+  resize: none;
+}
+
+.line-3 {
+  height: 75px;
+  overflow: hidden;
+}
+
+.sample {
+  border: solid gray 1px;
+}
+
+@media (min-width: 992px) {
+  .col-md-6 {
+    width: 50%;
+  }
+  .col-md-12 {
+    width: 100%;
+  }
+}
+
+.sample {
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.row::after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.clearifx {
+  display: inline-block;
+}
+/* html[xmlns] .row {
+  display: block;
+}
+* html .row {
+  height: 1%;
+} */
+
+/* .row::before {
+  display : table;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+  content: " ";
+} */
+
+.col-md-12 .col-md-6 {
+  float: left;
+  position: relative;
+  min-height: 1px;
+}
+
+.section {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (max-width: 991px) {
+  .col-md-6 {
+    width: 100%;
+  }
+  .col-md-12 {
+    width: 100%;
+  }
+}

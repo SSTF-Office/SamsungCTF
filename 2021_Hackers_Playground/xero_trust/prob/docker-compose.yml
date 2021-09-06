@@ -1,0 +1,25 @@
+version: '3.3'
+services:
+    xero_trust:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: xero_trust
+        depends_on:
+            - db
+        volumes:
+            - ./html:/var/www/html
+        ports:
+            - 7777:443
+    db:
+        container_name: db
+        image: mysql:5.7
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        volumes:
+            - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: xero
+            MYSQL_USER: xero
+            MYSQL_PASSWORD: 12345678

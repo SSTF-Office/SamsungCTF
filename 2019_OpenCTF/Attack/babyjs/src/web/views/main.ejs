@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Items</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/dic.css">
+  </head>
+  <body>
+    <div class="container">
+        <div class="header">
+          <h1>Add Items</h1>
+        </div>
+        <form method="post" action="/items/add/post">
+          <div class="form-group">
+          
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <td class="name"><b>Item name</b></td>
+                  <td class="value"><b>Item value</b></td>
+                  <td ></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="name"><input type="text" class="form-control name" id="name" name="name"></td>
+                  <td class="value"><input type="text" class="form-control" id="value" name="value"></td>
+                  <td class="btn"><button type="submit" class="btn btn-success full">Add</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </form>
+        
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <td class="name"></td>
+              <td class="value"></td>
+              <td><b></b></td>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i=0; i < itms.length; i++) { %>
+            <tr>
+              <td class="name"><%= itms[i].name %></td>
+              <td class="value"><%= itms[i].value %></td>
+              <td class="btn"><a href="/items/delete/<%= itms[i]._id %>" class="btn btn-danger full">Delete</a></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+        <form method="get" action="/items/bag">
+          <% for(var i=0; i < itms.length; i++) { %>
+          <input type="hidden" name="names[]" value="<%= itms[i].name %>">
+          <% } %>
+        <button class="btn btn-primary" type="submit">Bag List!</button>
+        </form>
+    </div>
+  </body>
+</html>

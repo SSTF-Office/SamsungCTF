@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Ast.fs" />
+    <FsYacc Include="Parser.fsy">
+    <OtherFlags>--module Parser</OtherFlags>
+    </FsYacc>
+    <FsLex Include="Lexer.fsl">
+    <OtherFlags>--unicode</OtherFlags>
+    </FsLex>
+    <Compile Include="Parser.fs" />
+    <Compile Include="Lexer.fs" />
+    <Compile Include="Lambda.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="fslexyacc" Version="7.0.6" />
+  </ItemGroup>
+</Project>

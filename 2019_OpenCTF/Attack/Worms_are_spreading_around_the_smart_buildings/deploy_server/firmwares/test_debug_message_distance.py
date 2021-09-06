@@ -1,0 +1,40 @@
+from api import VacuumCleaner, MoveDirection, RotateDirection
+import time
+
+if __name__ == '__main__':
+
+    cleaner = VacuumCleaner()
+    cleaner.send_debug_message("Distance 0")
+    cleaner.move(MoveDirection.FORWARD)
+    time.sleep(60)
+    cleaner.send_debug_message("Distance 1")
+    cleaner.rotate(RotateDirection.LEFT)
+    cleaner.move(MoveDirection.FORWARD)
+    time.sleep(60)
+    cleaner.send_debug_message("Distance 2")
+    cleaner.move(MoveDirection.FORWARD)
+    time.sleep(60)
+    cleaner.send_debug_message("Distance 3")
+    cleaner.move(MoveDirection.FORWARD)
+    time.sleep(60)
+    cleaner.send_debug_message("Distance 4")
+    cleaner.move(MoveDirection.FORWARD)
+    time.sleep(60)
+    cleaner.send_debug_message("Distance 5")
+    cleaner.move(MoveDirection.FORWARD)
+    time.sleep(60)
+    cleaner.send_debug_message("Distance 6")
+    cleaner.move(MoveDirection.FORWARD)
+    time.sleep(60)
+    cleaner.send_debug_message("Distance 7")
+    cleaner.move(MoveDirection.FORWARD)
+    time.sleep(60)
+    cleaner.send_debug_message("Distance 8")
+    cleaner.move(MoveDirection.FORWARD)
+    time.sleep(60)
+    cleaner.send_debug_message("Distance 9")
+    cleaner.move(MoveDirection.FORWARD)
+    time.sleep(60)
+    cleaner.send_debug_message("Distance 10")
+
+

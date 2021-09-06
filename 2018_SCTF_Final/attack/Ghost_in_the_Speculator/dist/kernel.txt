@@ -1,0 +1,50 @@
+.data
+
+_info:
+.word 0x00000000
+.word 0x11111111
+.word 0x22222222
+.word 0x33333333
+.word 0x44444444
+.word 0x55555555
+.word 0x66666666
+.word 0x77777777
+.word 0x88888888
+.word 0x99999999
+.word 0xaaaaaaaa
+.word 0xbbbbbbbb
+.word 0xcccccccc
+.word 0xdddddddd
+.word 0xeeeeeeee
+.word 0xffffffff
+
+.text
+
+; $1 = idx // argument
+
+; $2 = &_info[idx]
+; $3 = &_info[16]
+lui $2, 0x9000
+ori $2, $2, 0
+addiu $3, $2, 64
+sll $1, $1, 2
+addu $2, $2, $1
+
+; $4 = ($2 < $3)
+subu $5, $5, $5
+sltu $4, $2, $3
+
+; if $4 == 0, goto _out_of_bounds
+; beq instruction at 0x8040001c
+beq $4, $5, _out_of_bounds
+
+    ; $1 = _info[idx]
+    lw $1, 0($2)
+    rfe
+
+_out_of_bounds:
+
+    ; $1 = -1
+    lui $1, 0xffff
+    ori $1, $1, 0xffff
+    rfe

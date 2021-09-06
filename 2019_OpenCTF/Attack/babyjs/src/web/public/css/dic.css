@@ -1,0 +1,25 @@
+td.name {
+    width: 200px;
+}
+
+td.value {
+    width: 700px;
+}
+
+td.btn {
+    width: 100px;
+}
+
+.blank {
+    margin:0; 
+    padding:0; 
+    height:20px; 
+}
+
+.header {
+    height:100px; 
+}
+
+button.full { 
+    width: 100%;
+}

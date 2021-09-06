@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+    bt_exchange:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: bt_exchange
+        volumes:
+            - ./html:/var/www/html
+        ports:
+            - 7878:80

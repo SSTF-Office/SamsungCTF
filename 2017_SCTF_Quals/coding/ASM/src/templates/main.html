@@ -1,0 +1,135 @@
+<html>
+  <head>
+    <title>ASM</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col s10">
+          <blockquote style="background-color:#fff">
+            <h5>ASM</h5>
+            Add or Sub or Mul?<br>
+            Time limit: 80s
+            <br>
+            <a id="start" class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Start!</a>
+          </blockquote>
+
+          <div id="notshow">
+            <div class="row" id="a">
+              </div>
+	<div class="row" id="b">
+	</div>
+              <div class="row" id="answer">
+                <div class="input-field col s6">
+                  <input placeholder="answer" id="ans" type="text" class="validate">
+                  <label for="first_name">Answer</label>
+                </div>
+              <a id="submit" class="waves-effect waves-light btn">Submit</a>
+            </div>
+            <div class="row">
+              <div class="progress">
+                <div class="determinate" style="width: 100%" id="pro"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    jQuery.fn.extend({
+      scrollToMe: function () {
+        var x = jQuery(this).offset().top - 100;
+        jQuery('html,body').animate({scrollTop: x}, 500);
+      }});
+
+var timer = null;
+var timerval = 80.0;
+var bgm = 1;
+function sTimer()
+{
+  if(timer != null)
+  {
+    clearInterval(timer);
+  }
+  timerval = 80.0;
+  bgm = 0;
+  timer = setInterval(function () {
+    timerval -= 0.1;
+    $("#pro").css("width", (timerval/80.0 * 100)+"%");
+
+    if(timerval == 0)
+    {
+      alert("Too slow!");
+      location.reload();
+    }
+  }, 100);
+}
+
+function show(data)
+{
+        $("#a").append('<br><span style="font-size:40px">stage '+ (solved+1) + '</span><span style="font-size:20px">-' + (80 - timerval).toFixed(2) + 's expired</span><br><img src="' + data + '" id="img' + (solved + 1) + '" class="responsive-img" style="opacity: 0;" />');
+        Materialize.fadeInImage('#img' + (solved+1));
+        $("#answer").scrollToMe();
+}
+
+$("#start").click(function()
+    {
+      $("#a").html('');
+      $("#pro").css("background-color", "#26a69a");
+      solved = 0;
+      $.post("{{url_for('frontend.start')}}").done(function(data){
+        show(data);
+        sTimer();
+     });
+    });
+
+$( "#ans" ).keypress(function( event ) {
+  if ( event.which == 13) {
+    submit();
+  }
+});
+
+$("#submit").click(submit);
+
+    function submit()
+{
+      $.post("{{url_for('frontend.check')}}", {'ans': $('#ans').val()}).done(function(data)
+          {
+            $("#ans").val("");
+            if(data == '-1')
+            {
+              alert("Wrong!");
+            }
+            else if(data == '-2')
+            {
+              alert("Too slow!");
+              location.reload();
+            }
+            else if(data == '-3')
+            {
+              alert("PLZ restart!");
+              location.reload();
+            }
+            else
+            {
+              data = $.parseJSON(data);
+              if(data['stage'] != 100)
+                solved = data['stage'];
+              if(data['flag'] != '')
+                $("#a").append('<br><h5>stage' + data['stage'] +'\'s FLAG: ' + data['flag'] + '</h5></br>');
+              show(data['url']);
+
+            }
+          }
+          );
+    }
+  </script>
+</html>
+

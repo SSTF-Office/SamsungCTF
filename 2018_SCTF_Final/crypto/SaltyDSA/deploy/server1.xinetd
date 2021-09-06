@@ -1,0 +1,12 @@
+service server1
+{
+  disable       = no
+  socket_type   = stream
+  protocol      = tcp
+  wait          = no
+  user          = SaltyDSA
+  server        = /bin/bash
+  server_args   = /home/SaltyDSA/server1.sh
+  type          = UNLISTED
+  port          = 12345
+}

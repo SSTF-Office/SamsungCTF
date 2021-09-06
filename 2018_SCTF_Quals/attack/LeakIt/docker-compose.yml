@@ -1,0 +1,14 @@
+version: '3'
+services:
+    leakit:
+        privileged: true
+        container_name: leakit
+        build: deploy/
+        ports:
+            - "42424:4444"
+        volumes:
+            - "./deploy/src:/home/leakit"
+        environment:
+            ADMIN_GPG_ID : admin
+            ADMIN_GPG_PASSPHRASE : YOUCANNOTFINDTHISPASSPHRASEITSVERYLONGRIGHTHUH
+            SERVER_PORT : 4444

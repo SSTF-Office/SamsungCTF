@@ -1,0 +1,13 @@
+service humandetector
+{
+    disable = no
+    socket_type = stream
+    protocol    = tcp
+    wait        = no
+    user        = humandetector
+    type        = UNLISTED
+    port        = 42424
+    bind        = 0.0.0.0
+    server      = /home/humandetector/run.sh
+}
+

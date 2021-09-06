@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/dic.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+          <h1>Login Page</h1>        
+      </div>
+      <div align="center" class="body align-middle">
+        <form class="form-group col-md-6" method="POST" action="/login/post">
+          <div class="form-group input-group">
+            <input type="text" class="form-control" placeholder="username" name="username">
+          </div>
+          <div class="form-group input-group" >
+            <input type="password" class="form-control" placeholder="password" name="password">
+          </div>
+          <div align="right">
+            <a href="/login/register" class="btn btn-link">#Don't you have account?</a>
+            <button type="submit" class="btn btn-primary active">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

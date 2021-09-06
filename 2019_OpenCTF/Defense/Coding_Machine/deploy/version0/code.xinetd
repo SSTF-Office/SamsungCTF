@@ -1,0 +1,12 @@
+service code
+{
+    disable = no
+    socket_type = stream
+    protocol    = tcp
+    wait        = no
+    user        = code
+    server      = /usr/bin/python
+    server_args = /home/code/server.py
+    type        = UNLISTED
+    port        = 9000
+}

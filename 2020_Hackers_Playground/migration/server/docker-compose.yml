@@ -1,0 +1,51 @@
+version: '3.3'
+services:
+    sitea:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: sitea
+        depends_on:
+            - dba
+            - siteb
+        volumes:
+            - ./sitea:/var/www/html
+        ports:
+            - 5555:80
+    siteb:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: siteb
+        depends_on:
+            - dbb
+        volumes:
+            - ./siteb:/var/www/html
+        ports:
+            - 7777:80
+    dba:
+        container_name: dba
+        image: mysql:5.7
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        volumes:
+            - ./dump_sitea.sql:/docker-entrypoint-initdb.d/dump.sql
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: sitea
+            MYSQL_USER: sitea
+            MYSQL_PASSWORD: 12345678
+    dbb:
+        container_name: dbb
+        image: mysql:5.7
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        volumes:
+            - ./dump_siteb.sql:/docker-entrypoint-initdb.d/dump.sql
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: siteb
+            MYSQL_USER: siteb
+            MYSQL_PASSWORD: 12345678
+
+

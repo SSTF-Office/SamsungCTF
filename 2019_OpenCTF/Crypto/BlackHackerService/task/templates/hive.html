@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<body style="background-color: black; background-image:url(/static/hive.jpg);background-repeat: no-repeat;background-size:100% 1100px">
+    <header>
+        <div>
+            <h1 style="color: green; margin-left: 10px"> Welcome to the Hive!</h1>
+            <strong><nav>		  
+	    <iframe src="https://www.youtube.com/embed/9L7mZH2u3Qc?autoplay=1" allow="autoplay" style="width:0;height:0;border:0;border:none;"></iframe>
+                <ul class="menu">
+                    <a class="btn btn-danger" style="outline-color: green; background-color:green" href="/hive/secret/">AdminSecret</a>
+                    {% if verify_session == False %}
+                    <a class="btn btn-primary" href="{{ url_for('login_page') }}">Sign In</a>
+                    {% else %}
+                    <a class="btn btn-primary" style="background-color: green" href="{{ url_for('logout') }}">Logout</a>
+                    {% endif %}
+                </ul>
+            </nav></strong>
+        </div>
+    </header>
+</body>
+{% endblock %}

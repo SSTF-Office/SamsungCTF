@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<body style="background-color:black;">
+	<div style="display: flex; justify-content: center; margin-top: 300px">
+		<div class="form-group">
+		<h4 style="color: green">Sign in</h4>
+		<br>
+		{% from "_formhelpers.html" import render_field %}
+		<form method=post action="/login/">
+			<dl>
+				{{render_field(form.username)}}
+				{{render_field(form.password)}}
+			</dl>
+			<p><input class="btn btn-primary" style="background-color:green" type=submit value=Login></p>
+		</form>
+		{% if error %}
+			<p class="error"><strong>Error:</strong>{{error}}</p>
+		{% endif %}
+		</div>
+		<div><img src="/static/hdflip.gif" style="margin-left: 50px" class="rounded float-right" title="Admin or not ?"/></div>
+	</div>
+	
+</body>
+
+{% endblock %}
+

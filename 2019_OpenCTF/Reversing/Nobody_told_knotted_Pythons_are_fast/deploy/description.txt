@@ -1,0 +1,7 @@
+This whole reversing stuff is getting out of hand man. Now you can just run the file, take some tome for coffee and have it done.
+
+The flag is SAMSUNGCTF{output of python3 knotted.py 1586785745194037539296989450555036762962298359539455233716031661976595026090016806109443588280900030903881431427658355881525539279532875345980737296832990651884955460392766668800}
+
+Challenge files:
+knotted.py
+x.cpython-36m-x86_64-linux-gnu.so

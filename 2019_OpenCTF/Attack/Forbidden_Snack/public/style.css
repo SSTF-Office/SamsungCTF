@@ -1,0 +1,42 @@
+.fadein {
+    opacity: 1 !important;
+}
+
+body {
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    max-width: 960px;
+    margin: auto;
+}
+
+#welcome {
+    margin-top: 40%;
+}
+
+#name {
+    margin-top: 40%;
+    opacity: 0;
+}
+
+#flag {
+    margin-top: 40%;
+    opacity: 0;
+}
+
+#res {
+    opacity: 0;
+    margin-top: 40%;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 10pt;
+}
+
+* {
+    box-sizing: border-box;
+}

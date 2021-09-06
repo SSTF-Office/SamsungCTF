@@ -1,0 +1,35 @@
+/*------------------------------------------------------------------
+  	[Promo Block]
+------------------------------------------------------------------*/
+
+.promo-block {
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	background: url(../img/1920x1080/01.jpg) no-repeat;
+	background-size: cover;
+	background-position: center center;
+	padding: 250px 0 200px;
+
+	&:before {
+		@include position(absolute, $top: 0, $left: 0);
+		@include size(100%);
+		z-index: -1;
+		@include bg-opacity($color-heading, .4);
+		content: " ";
+	}
+
+	.promo-block-title {
+		@include font($size: 70px);
+		color: $color-white;
+
+		@media (max-width: $screen-xs-min) {
+			@include font($size: 50px);
+		}
+	}
+
+	.promo-block-text {
+		@include font($size: 25px);
+		color: $color-white;
+	}
+}

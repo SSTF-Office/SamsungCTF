@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>SCTF Legitimate</title>
+</head>
+<body>
+
+<script>
+window.onload = function() {
+    Particles.init({
+        selector: '.background',
+        color: '#75A5B7',
+        maxParticles: 130,
+        connectParticles: true,
+        responsive: [{
+            breakpoint: 768,
+            options: {
+                maxParticles: 80
+            }
+            }, {
+            breakpoint: 375,
+            options: {
+                maxParticles: 50
+            }
+        }]
+    });
+};
+
+</script>
+
+<h1>Samsung Capture The Flag 2020:<br>Legitimate</h1>
+
+<canvas class="background"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
+</body>
+</html>

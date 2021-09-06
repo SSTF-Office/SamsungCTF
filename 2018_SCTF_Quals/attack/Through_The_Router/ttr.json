@@ -1,0 +1,63 @@
+{
+  "chal_name": "Through The Router",
+  "url": "Through_The_Router",
+  "description": [
+    "You are an industrial spy hiding in the SCTF company.",
+    "You have found the secret recipe, but could not send any packet to your home.",
+    "That is because SCTF's corporate network is configured with SDN,",
+    "and that these [rules](#) are installed at all routers in the network.",
+    "",
+    "Craft a packet that satisfies:",
+    "- It is a UDP packet",
+    "- It arrives at 10.0.0.1:22136.",
+    "- Its body is a 6-byte string 'secret'.",
+    "",
+    "Your packet will be sent using this python code:",
+    "```",
+    "s = socket(AF_INET, SOCK_RAW, IPPROTO_UDP)",
+    "s.setsockopt(IPPROTO_IP, IP_HDRINCL, 1)",
+    "s.sendto(packet, ('10.0.0.1', 0))",
+    "```",
+    "Therefore the packet must include IP and UDP headers."],
+  "flag": "SCTF{Sp00f_7h3_p4ck3t_70_dr1ll_pr1v4t3_n37w0rk}",
+  "handler": "ttr",
+  "valid": false,
+  "packet_submit": true,
+  "timeout": 10,
+  "topology": {
+    "edges": [
+      {
+        "from": 1,
+        "length": 150,
+        "to": 2
+      },
+      {
+        "from": 2,
+        "length": 150,
+        "to": 3
+      }
+    ],
+    "nodes": [
+      {
+        "id": 1,
+        "title": "You",
+        "shape": "image",
+        "label": "10.0.0.2",
+        "image": "static/jobs/img/you.svg"
+      },
+      {
+        "id": 2,
+        "shape": "image",
+        "label": "Router",
+        "image": "static/jobs/img/router.svg"
+      },
+      {
+        "id": 3,
+        "title": "Your home",
+        "shape": "image",
+        "label": "10.0.0.1",
+        "image": "static/jobs/img/target.svg"
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+<Directory /var/www/html/mp3>
+    AllowOverride All
+    Options +Indexes
+    Order allow,deny 
+    Allow from all
+</Directory>

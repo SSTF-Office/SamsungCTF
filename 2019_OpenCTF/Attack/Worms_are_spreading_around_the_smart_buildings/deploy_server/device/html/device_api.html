@@ -1,0 +1,1031 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.6.1" />
+<title>device_api API documentation</title>
+<meta name="description" content="Interface for hardware of Connected Devices." />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{font-weight:bold}#index h4 + ul{margin-bottom:.6em}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase;cursor:pointer}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>device_api</code></h1>
+</header>
+<section id="section-intro">
+<p>Interface for hardware of Connected Devices.</p>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python"># -*- coding: utf-8 -*-
+&#34;&#34;&#34;Interface for hardware of Connected Devices.&#34;&#34;&#34;
+
+from enum import Enum
+
+
+class MoveDirection(Enum):
+    &#34;&#34;&#34;Enum for selecting direction of move.&#34;&#34;&#34;
+    FORWARD = 1
+    BACKWARD = 2
+
+
+class RotateDirection(Enum):
+    &#34;&#34;&#34;Enum for selecting direction of rotation.&#34;&#34;&#34;
+    LEFT = 1
+    RIGHT = 2
+
+
+class ConnectedThing(object):
+    &#34;&#34;&#34;Common interface for all types of devices.&#34;&#34;&#34;
+    def __init__(self):
+        &#34;&#34;&#34;Creates ConnectedThing device.&#34;&#34;&#34;
+        pass
+
+    MESSAGE_MAX_SIZE = 150
+
+    MESSAGE_MIN_TIME_SEC = 60
+
+    MAX_DISTANCE_DEVICE_DISCOVER = 5
+
+    def get_dev_id(self) -&gt; str:
+        &#34;&#34;&#34;Returns unique identifier of this device.
+
+        Returns:
+            str: String containing unique identifier of this device.
+        &#34;&#34;&#34;
+        pass
+
+    def get_config(self) -&gt; str:
+        &#34;&#34;&#34;Returns current configuration of device in YAML format.
+
+        Returns:
+            str: String containing YAML formatted configuration.
+        &#34;&#34;&#34;
+        pass
+
+    def set_config(self, config: str) -&gt; bool:
+        &#34;&#34;&#34;Sets current configuration of device.
+
+        Args:
+            config (str): String with YAML configuration.
+
+        Returns:
+            bool: True for success, False otherwise.
+        &#34;&#34;&#34;
+        pass
+
+    def discover_things(self) -&gt; list:
+        &#34;&#34;&#34;Performs discovery of nearby devices and returns list of them.
+        Returns:
+            list: List of device identifiers of discovered devices.
+        &#34;&#34;&#34;
+        pass
+
+    def send_message(self, thing_id: str, message: str) -&gt; bool:
+        &#34;&#34;&#34;Sends text message to nearby device. &lt;br&gt;
+            Messages can be sent only nearby destination device (where device can be discovered). &lt;br&gt;
+            Messages can be tampered because of low reliability of our narrowband link. &lt;br&gt;
+            Messages must be ASCII encoded with no binary characters! &lt;br&gt;
+            Maximal size of message is 150 characters!
+
+        Args:
+            thing_id (str): Identifier of device.
+            message (str): Content of message to another device.
+
+        Returns:
+            bool: True for success, False otherwise.
+        &#34;&#34;&#34;
+        pass
+
+    def send_update(self, thing_id: str, update_package: bytes) -&gt; bool:
+        &#34;&#34;&#34;Sends update package to nearby device.
+
+        Args:
+            thing_id (str): Identifier of device.
+            update_package (bytes): Content of update package for another device.
+
+        Returns:
+            bool: True for success, False otherwise.
+        &#34;&#34;&#34;
+        pass
+
+    def forward_update(self, thing_id: str) -&gt; bool:
+        &#34;&#34;&#34;Sends update package used by this device to nearby device.&lt;br&gt;
+            This can be used only by devices of the same type!
+
+        Args:
+            thing_id (str): Identifier of device.
+
+        Returns:
+            bool: True for success, False otherwise.
+        &#34;&#34;&#34;
+        pass
+
+    def read_input_message(self) -&gt; str:
+        &#34;&#34;&#34;Reads incoming messages from other devices or system sent by docking station.
+
+        Returns:
+            str: First incoming message or empty string, if no messages are available.
+        &#34;&#34;&#34;
+        pass
+
+    def get_battery_level(self) -&gt; int:
+        &#34;&#34;&#34;Returns current level of battery charge.
+        Returns:
+            int: Current level of battery charge in percentage (0-100).
+        &#34;&#34;&#34;
+        pass
+
+
+class VacuumCleaner(ConnectedThing):
+    &#34;&#34;&#34;Interface for vacuum cleaners.&#34;&#34;&#34;
+    def __init__(self):
+        &#34;&#34;&#34;Creates VacuumCleaner device.&#34;&#34;&#34;
+        super().__init__()
+
+    def check_passability(self) -&gt; bool:
+        &#34;&#34;&#34;Checks whether space in front of device is unoccupied.
+
+        Returns:
+            bool: True if space in front of device is passable, False otherwise.
+        &#34;&#34;&#34;
+        pass
+
+    def check_surface(self) -&gt; bool:
+        &#34;&#34;&#34;Checks whether surface under device is clean.
+
+        Returns:
+            bool: True if surface under device is clean, False otherwise.
+        &#34;&#34;&#34;
+        pass
+
+    def clean_surface(self) -&gt; bool:
+        &#34;&#34;&#34;Cleans surface near device.
+        Cleaning of each block takes around 10 seconds and uses around 1% of battery power.
+
+        Returns:
+            bool: True for success, False otherwise.
+        &#34;&#34;&#34;
+        pass
+
+    def rotate(self, direction: RotateDirection) -&gt; bool:
+        &#34;&#34;&#34;Rotates device in desirable direction.
+
+        Args:
+            direction (RotateDirection): Direction of rotation.
+
+        Returns:
+            bool: True for success, False otherwise.
+        &#34;&#34;&#34;
+        pass
+
+    def move(self, direction: MoveDirection) -&gt; bool:
+        &#34;&#34;&#34;Moves device in desirable direction.
+        Moving takes around 1 second and uses around 0.3% of battery power.
+
+        Args:
+            direction (MoveDirection): Direction of move.
+
+        Returns:
+            bool: True for success, False otherwise.
+        &#34;&#34;&#34;
+        pass
+
+    def return_dock(self) -&gt; bool:
+        &#34;&#34;&#34;Returns device to docking station.
+
+        Returns:
+            bool: True for success, False otherwise.
+        &#34;&#34;&#34;
+        pass
+
+    def send_debug_message(self, message: str) -&gt; bool:
+        &#34;&#34;&#34;Sends debug message.
+
+        Restrictions:
+
+        * Messages can be sent only nearby docking stations. &lt;br&gt;
+        * Messages must be ASCII encoded with no binary characters! &lt;br&gt;
+        * Maximal size of a single message is 150 characters. &lt;br&gt;
+        * Each device can send only one message per minute. &lt;br&gt;
+        * Messages can be tampered because of low reliability of our narrowband link.
+
+        Args:
+            message (str): Content of debug message to be sent.
+
+        Returns:
+            bool: True for success, False otherwise.
+        &#34;&#34;&#34;
+        pass</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="device_api.ConnectedThing"><code class="flex name class">
+<span>class <span class="ident">ConnectedThing</span></span>
+</code></dt>
+<dd>
+<section class="desc"><p>Common interface for all types of devices.</p>
+<p>Creates ConnectedThing device.</p></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">class ConnectedThing(object):
+    &#34;&#34;&#34;Common interface for all types of devices.&#34;&#34;&#34;
+    def __init__(self):
+        &#34;&#34;&#34;Creates ConnectedThing device.&#34;&#34;&#34;
+        pass
+
+    MESSAGE_MAX_SIZE = 150
+
+    MESSAGE_MIN_TIME_SEC = 60
+
+    MAX_DISTANCE_DEVICE_DISCOVER = 5
+
+    def get_dev_id(self) -&gt; str:
+        &#34;&#34;&#34;Returns unique identifier of this device.
+
+        Returns:
+            str: String containing unique identifier of this device.
+        &#34;&#34;&#34;
+        pass
+
+    def get_config(self) -&gt; str:
+        &#34;&#34;&#34;Returns current configuration of device in YAML format.
+
+        Returns:
+            str: String containing YAML formatted configuration.
+        &#34;&#34;&#34;
+        pass
+
+    def set_config(self, config: str) -&gt; bool:
+        &#34;&#34;&#34;Sets current configuration of device.
+
+        Args:
+            config (str): String with YAML configuration.
+
+        Returns:
+            bool: True for success, False otherwise.
+        &#34;&#34;&#34;
+        pass
+
+    def discover_things(self) -&gt; list:
+        &#34;&#34;&#34;Performs discovery of nearby devices and returns list of them.
+        Returns:
+            list: List of device identifiers of discovered devices.
+        &#34;&#34;&#34;
+        pass
+
+    def send_message(self, thing_id: str, message: str) -&gt; bool:
+        &#34;&#34;&#34;Sends text message to nearby device. &lt;br&gt;
+            Messages can be sent only nearby destination device (where device can be discovered). &lt;br&gt;
+            Messages can be tampered because of low reliability of our narrowband link. &lt;br&gt;
+            Messages must be ASCII encoded with no binary characters! &lt;br&gt;
+            Maximal size of message is 150 characters!
+
+        Args:
+            thing_id (str): Identifier of device.
+            message (str): Content of message to another device.
+
+        Returns:
+            bool: True for success, False otherwise.
+        &#34;&#34;&#34;
+        pass
+
+    def send_update(self, thing_id: str, update_package: bytes) -&gt; bool:
+        &#34;&#34;&#34;Sends update package to nearby device.
+
+        Args:
+            thing_id (str): Identifier of device.
+            update_package (bytes): Content of update package for another device.
+
+        Returns:
+            bool: True for success, False otherwise.
+        &#34;&#34;&#34;
+        pass
+
+    def forward_update(self, thing_id: str) -&gt; bool:
+        &#34;&#34;&#34;Sends update package used by this device to nearby device.&lt;br&gt;
+            This can be used only by devices of the same type!
+
+        Args:
+            thing_id (str): Identifier of device.
+
+        Returns:
+            bool: True for success, False otherwise.
+        &#34;&#34;&#34;
+        pass
+
+    def read_input_message(self) -&gt; str:
+        &#34;&#34;&#34;Reads incoming messages from other devices or system sent by docking station.
+
+        Returns:
+            str: First incoming message or empty string, if no messages are available.
+        &#34;&#34;&#34;
+        pass
+
+    def get_battery_level(self) -&gt; int:
+        &#34;&#34;&#34;Returns current level of battery charge.
+        Returns:
+            int: Current level of battery charge in percentage (0-100).
+        &#34;&#34;&#34;
+        pass</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="device_api.VacuumCleaner" href="#device_api.VacuumCleaner">VacuumCleaner</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="device_api.ConnectedThing.MAX_DISTANCE_DEVICE_DISCOVER"><code class="name">var <span class="ident">MAX_DISTANCE_DEVICE_DISCOVER</span></code></dt>
+<dd>
+<section class="desc"></section>
+</dd>
+<dt id="device_api.ConnectedThing.MESSAGE_MAX_SIZE"><code class="name">var <span class="ident">MESSAGE_MAX_SIZE</span></code></dt>
+<dd>
+<section class="desc"></section>
+</dd>
+<dt id="device_api.ConnectedThing.MESSAGE_MIN_TIME_SEC"><code class="name">var <span class="ident">MESSAGE_MIN_TIME_SEC</span></code></dt>
+<dd>
+<section class="desc"></section>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="device_api.ConnectedThing.discover_things"><code class="name flex">
+<span>def <span class="ident">discover_things</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Performs discovery of nearby devices and returns list of them.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>list</code></strong></dt>
+<dd>List of device identifiers of discovered devices.</dd>
+</dl></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def discover_things(self) -&gt; list:
+    &#34;&#34;&#34;Performs discovery of nearby devices and returns list of them.
+    Returns:
+        list: List of device identifiers of discovered devices.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</dd>
+<dt id="device_api.ConnectedThing.forward_update"><code class="name flex">
+<span>def <span class="ident">forward_update</span></span>(<span>self, thing_id)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Sends update package used by this device to nearby device.<br>
+This can be used only by devices of the same type!</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>thing_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>Identifier of device.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>bool</code></strong></dt>
+<dd>True for success, False otherwise.</dd>
+</dl></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def forward_update(self, thing_id: str) -&gt; bool:
+    &#34;&#34;&#34;Sends update package used by this device to nearby device.&lt;br&gt;
+        This can be used only by devices of the same type!
+
+    Args:
+        thing_id (str): Identifier of device.
+
+    Returns:
+        bool: True for success, False otherwise.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</dd>
+<dt id="device_api.ConnectedThing.get_battery_level"><code class="name flex">
+<span>def <span class="ident">get_battery_level</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns current level of battery charge.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>int</code></strong></dt>
+<dd>Current level of battery charge in percentage (0-100).</dd>
+</dl></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def get_battery_level(self) -&gt; int:
+    &#34;&#34;&#34;Returns current level of battery charge.
+    Returns:
+        int: Current level of battery charge in percentage (0-100).
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</dd>
+<dt id="device_api.ConnectedThing.get_config"><code class="name flex">
+<span>def <span class="ident">get_config</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns current configuration of device in YAML format.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>str</code></strong></dt>
+<dd>String containing YAML formatted configuration.</dd>
+</dl></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def get_config(self) -&gt; str:
+    &#34;&#34;&#34;Returns current configuration of device in YAML format.
+
+    Returns:
+        str: String containing YAML formatted configuration.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</dd>
+<dt id="device_api.ConnectedThing.get_dev_id"><code class="name flex">
+<span>def <span class="ident">get_dev_id</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns unique identifier of this device.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>str</code></strong></dt>
+<dd>String containing unique identifier of this device.</dd>
+</dl></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def get_dev_id(self) -&gt; str:
+    &#34;&#34;&#34;Returns unique identifier of this device.
+
+    Returns:
+        str: String containing unique identifier of this device.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</dd>
+<dt id="device_api.ConnectedThing.read_input_message"><code class="name flex">
+<span>def <span class="ident">read_input_message</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Reads incoming messages from other devices or system sent by docking station.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>str</code></strong></dt>
+<dd>First incoming message or empty string, if no messages are available.</dd>
+</dl></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def read_input_message(self) -&gt; str:
+    &#34;&#34;&#34;Reads incoming messages from other devices or system sent by docking station.
+
+    Returns:
+        str: First incoming message or empty string, if no messages are available.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</dd>
+<dt id="device_api.ConnectedThing.send_message"><code class="name flex">
+<span>def <span class="ident">send_message</span></span>(<span>self, thing_id, message)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Sends text message to nearby device. <br>
+Messages can be sent only nearby destination device (where device can be discovered). <br>
+Messages can be tampered because of low reliability of our narrowband link. <br>
+Messages must be ASCII encoded with no binary characters! <br>
+Maximal size of message is 150 characters!</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>thing_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>Identifier of device.</dd>
+<dt><strong><code>message</code></strong> :&ensp;<code>str</code></dt>
+<dd>Content of message to another device.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>bool</code></strong></dt>
+<dd>True for success, False otherwise.</dd>
+</dl></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def send_message(self, thing_id: str, message: str) -&gt; bool:
+    &#34;&#34;&#34;Sends text message to nearby device. &lt;br&gt;
+        Messages can be sent only nearby destination device (where device can be discovered). &lt;br&gt;
+        Messages can be tampered because of low reliability of our narrowband link. &lt;br&gt;
+        Messages must be ASCII encoded with no binary characters! &lt;br&gt;
+        Maximal size of message is 150 characters!
+
+    Args:
+        thing_id (str): Identifier of device.
+        message (str): Content of message to another device.
+
+    Returns:
+        bool: True for success, False otherwise.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</dd>
+<dt id="device_api.ConnectedThing.send_update"><code class="name flex">
+<span>def <span class="ident">send_update</span></span>(<span>self, thing_id, update_package)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Sends update package to nearby device.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>thing_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>Identifier of device.</dd>
+<dt><strong><code>update_package</code></strong> :&ensp;<code>bytes</code></dt>
+<dd>Content of update package for another device.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>bool</code></strong></dt>
+<dd>True for success, False otherwise.</dd>
+</dl></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def send_update(self, thing_id: str, update_package: bytes) -&gt; bool:
+    &#34;&#34;&#34;Sends update package to nearby device.
+
+    Args:
+        thing_id (str): Identifier of device.
+        update_package (bytes): Content of update package for another device.
+
+    Returns:
+        bool: True for success, False otherwise.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</dd>
+<dt id="device_api.ConnectedThing.set_config"><code class="name flex">
+<span>def <span class="ident">set_config</span></span>(<span>self, config)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Sets current configuration of device.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>config</code></strong> :&ensp;<code>str</code></dt>
+<dd>String with YAML configuration.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>bool</code></strong></dt>
+<dd>True for success, False otherwise.</dd>
+</dl></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def set_config(self, config: str) -&gt; bool:
+    &#34;&#34;&#34;Sets current configuration of device.
+
+    Args:
+        config (str): String with YAML configuration.
+
+    Returns:
+        bool: True for success, False otherwise.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="device_api.MoveDirection"><code class="flex name class">
+<span>class <span class="ident">MoveDirection</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Enum for selecting direction of move.</p></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">class MoveDirection(Enum):
+    &#34;&#34;&#34;Enum for selecting direction of move.&#34;&#34;&#34;
+    FORWARD = 1
+    BACKWARD = 2</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="device_api.MoveDirection.BACKWARD"><code class="name">var <span class="ident">BACKWARD</span></code></dt>
+<dd>
+<section class="desc"></section>
+</dd>
+<dt id="device_api.MoveDirection.FORWARD"><code class="name">var <span class="ident">FORWARD</span></code></dt>
+<dd>
+<section class="desc"></section>
+</dd>
+</dl>
+</dd>
+<dt id="device_api.RotateDirection"><code class="flex name class">
+<span>class <span class="ident">RotateDirection</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Enum for selecting direction of rotation.</p></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">class RotateDirection(Enum):
+    &#34;&#34;&#34;Enum for selecting direction of rotation.&#34;&#34;&#34;
+    LEFT = 1
+    RIGHT = 2</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="device_api.RotateDirection.LEFT"><code class="name">var <span class="ident">LEFT</span></code></dt>
+<dd>
+<section class="desc"></section>
+</dd>
+<dt id="device_api.RotateDirection.RIGHT"><code class="name">var <span class="ident">RIGHT</span></code></dt>
+<dd>
+<section class="desc"></section>
+</dd>
+</dl>
+</dd>
+<dt id="device_api.VacuumCleaner"><code class="flex name class">
+<span>class <span class="ident">VacuumCleaner</span></span>
+</code></dt>
+<dd>
+<section class="desc"><p>Interface for vacuum cleaners.</p>
+<p>Creates VacuumCleaner device.</p></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">class VacuumCleaner(ConnectedThing):
+    &#34;&#34;&#34;Interface for vacuum cleaners.&#34;&#34;&#34;
+    def __init__(self):
+        &#34;&#34;&#34;Creates VacuumCleaner device.&#34;&#34;&#34;
+        super().__init__()
+
+    def check_passability(self) -&gt; bool:
+        &#34;&#34;&#34;Checks whether space in front of device is unoccupied.
+
+        Returns:
+            bool: True if space in front of device is passable, False otherwise.
+        &#34;&#34;&#34;
+        pass
+
+    def check_surface(self) -&gt; bool:
+        &#34;&#34;&#34;Checks whether surface under device is clean.
+
+        Returns:
+            bool: True if surface under device is clean, False otherwise.
+        &#34;&#34;&#34;
+        pass
+
+    def clean_surface(self) -&gt; bool:
+        &#34;&#34;&#34;Cleans surface near device.
+        Cleaning of each block takes around 10 seconds and uses around 1% of battery power.
+
+        Returns:
+            bool: True for success, False otherwise.
+        &#34;&#34;&#34;
+        pass
+
+    def rotate(self, direction: RotateDirection) -&gt; bool:
+        &#34;&#34;&#34;Rotates device in desirable direction.
+
+        Args:
+            direction (RotateDirection): Direction of rotation.
+
+        Returns:
+            bool: True for success, False otherwise.
+        &#34;&#34;&#34;
+        pass
+
+    def move(self, direction: MoveDirection) -&gt; bool:
+        &#34;&#34;&#34;Moves device in desirable direction.
+        Moving takes around 1 second and uses around 0.3% of battery power.
+
+        Args:
+            direction (MoveDirection): Direction of move.
+
+        Returns:
+            bool: True for success, False otherwise.
+        &#34;&#34;&#34;
+        pass
+
+    def return_dock(self) -&gt; bool:
+        &#34;&#34;&#34;Returns device to docking station.
+
+        Returns:
+            bool: True for success, False otherwise.
+        &#34;&#34;&#34;
+        pass
+
+    def send_debug_message(self, message: str) -&gt; bool:
+        &#34;&#34;&#34;Sends debug message.
+
+        Restrictions:
+
+        * Messages can be sent only nearby docking stations. &lt;br&gt;
+        * Messages must be ASCII encoded with no binary characters! &lt;br&gt;
+        * Maximal size of a single message is 150 characters. &lt;br&gt;
+        * Each device can send only one message per minute. &lt;br&gt;
+        * Messages can be tampered because of low reliability of our narrowband link.
+
+        Args:
+            message (str): Content of debug message to be sent.
+
+        Returns:
+            bool: True for success, False otherwise.
+        &#34;&#34;&#34;
+        pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="device_api.ConnectedThing" href="#device_api.ConnectedThing">ConnectedThing</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="device_api.VacuumCleaner.check_passability"><code class="name flex">
+<span>def <span class="ident">check_passability</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Checks whether space in front of device is unoccupied.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>bool</code></strong></dt>
+<dd>True if space in front of device is passable, False otherwise.</dd>
+</dl></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def check_passability(self) -&gt; bool:
+    &#34;&#34;&#34;Checks whether space in front of device is unoccupied.
+
+    Returns:
+        bool: True if space in front of device is passable, False otherwise.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</dd>
+<dt id="device_api.VacuumCleaner.check_surface"><code class="name flex">
+<span>def <span class="ident">check_surface</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Checks whether surface under device is clean.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>bool</code></strong></dt>
+<dd>True if surface under device is clean, False otherwise.</dd>
+</dl></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def check_surface(self) -&gt; bool:
+    &#34;&#34;&#34;Checks whether surface under device is clean.
+
+    Returns:
+        bool: True if surface under device is clean, False otherwise.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</dd>
+<dt id="device_api.VacuumCleaner.clean_surface"><code class="name flex">
+<span>def <span class="ident">clean_surface</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Cleans surface near device.
+Cleaning of each block takes around 10 seconds and uses around 1% of battery power.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>bool</code></strong></dt>
+<dd>True for success, False otherwise.</dd>
+</dl></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def clean_surface(self) -&gt; bool:
+    &#34;&#34;&#34;Cleans surface near device.
+    Cleaning of each block takes around 10 seconds and uses around 1% of battery power.
+
+    Returns:
+        bool: True for success, False otherwise.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</dd>
+<dt id="device_api.VacuumCleaner.move"><code class="name flex">
+<span>def <span class="ident">move</span></span>(<span>self, direction)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Moves device in desirable direction.
+Moving takes around 1 second and uses around 0.3% of battery power.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>direction</code></strong> :&ensp;<a title="device_api.MoveDirection" href="#device_api.MoveDirection"><code>MoveDirection</code></a></dt>
+<dd>Direction of move.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>bool</code></strong></dt>
+<dd>True for success, False otherwise.</dd>
+</dl></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def move(self, direction: MoveDirection) -&gt; bool:
+    &#34;&#34;&#34;Moves device in desirable direction.
+    Moving takes around 1 second and uses around 0.3% of battery power.
+
+    Args:
+        direction (MoveDirection): Direction of move.
+
+    Returns:
+        bool: True for success, False otherwise.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</dd>
+<dt id="device_api.VacuumCleaner.return_dock"><code class="name flex">
+<span>def <span class="ident">return_dock</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns device to docking station.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>bool</code></strong></dt>
+<dd>True for success, False otherwise.</dd>
+</dl></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def return_dock(self) -&gt; bool:
+    &#34;&#34;&#34;Returns device to docking station.
+
+    Returns:
+        bool: True for success, False otherwise.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</dd>
+<dt id="device_api.VacuumCleaner.rotate"><code class="name flex">
+<span>def <span class="ident">rotate</span></span>(<span>self, direction)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Rotates device in desirable direction.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>direction</code></strong> :&ensp;<a title="device_api.RotateDirection" href="#device_api.RotateDirection"><code>RotateDirection</code></a></dt>
+<dd>Direction of rotation.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>bool</code></strong></dt>
+<dd>True for success, False otherwise.</dd>
+</dl></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def rotate(self, direction: RotateDirection) -&gt; bool:
+    &#34;&#34;&#34;Rotates device in desirable direction.
+
+    Args:
+        direction (RotateDirection): Direction of rotation.
+
+    Returns:
+        bool: True for success, False otherwise.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</dd>
+<dt id="device_api.VacuumCleaner.send_debug_message"><code class="name flex">
+<span>def <span class="ident">send_debug_message</span></span>(<span>self, message)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Sends debug message.</p>
+<p>Restrictions:</p>
+<ul>
+<li>Messages can be sent only nearby docking stations. <br></li>
+<li>Messages must be ASCII encoded with no binary characters! <br></li>
+<li>Maximal size of a single message is 150 characters. <br></li>
+<li>Each device can send only one message per minute. <br></li>
+<li>Messages can be tampered because of low reliability of our narrowband link.</li>
+</ul>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>message</code></strong> :&ensp;<code>str</code></dt>
+<dd>Content of debug message to be sent.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>bool</code></strong></dt>
+<dd>True for success, False otherwise.</dd>
+</dl></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def send_debug_message(self, message: str) -&gt; bool:
+    &#34;&#34;&#34;Sends debug message.
+
+    Restrictions:
+
+    * Messages can be sent only nearby docking stations. &lt;br&gt;
+    * Messages must be ASCII encoded with no binary characters! &lt;br&gt;
+    * Maximal size of a single message is 150 characters. &lt;br&gt;
+    * Each device can send only one message per minute. &lt;br&gt;
+    * Messages can be tampered because of low reliability of our narrowband link.
+
+    Args:
+        message (str): Content of debug message to be sent.
+
+    Returns:
+        bool: True for success, False otherwise.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="device_api.ConnectedThing" href="#device_api.ConnectedThing">ConnectedThing</a></b></code>:
+<ul class="hlist">
+<li><code><a title="device_api.ConnectedThing.discover_things" href="#device_api.ConnectedThing.discover_things">discover_things</a></code></li>
+<li><code><a title="device_api.ConnectedThing.forward_update" href="#device_api.ConnectedThing.forward_update">forward_update</a></code></li>
+<li><code><a title="device_api.ConnectedThing.get_battery_level" href="#device_api.ConnectedThing.get_battery_level">get_battery_level</a></code></li>
+<li><code><a title="device_api.ConnectedThing.get_config" href="#device_api.ConnectedThing.get_config">get_config</a></code></li>
+<li><code><a title="device_api.ConnectedThing.get_dev_id" href="#device_api.ConnectedThing.get_dev_id">get_dev_id</a></code></li>
+<li><code><a title="device_api.ConnectedThing.read_input_message" href="#device_api.ConnectedThing.read_input_message">read_input_message</a></code></li>
+<li><code><a title="device_api.ConnectedThing.send_message" href="#device_api.ConnectedThing.send_message">send_message</a></code></li>
+<li><code><a title="device_api.ConnectedThing.send_update" href="#device_api.ConnectedThing.send_update">send_update</a></code></li>
+<li><code><a title="device_api.ConnectedThing.set_config" href="#device_api.ConnectedThing.set_config">set_config</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="device_api.ConnectedThing" href="#device_api.ConnectedThing">ConnectedThing</a></code></h4>
+<ul class="">
+<li><code><a title="device_api.ConnectedThing.MAX_DISTANCE_DEVICE_DISCOVER" href="#device_api.ConnectedThing.MAX_DISTANCE_DEVICE_DISCOVER">MAX_DISTANCE_DEVICE_DISCOVER</a></code></li>
+<li><code><a title="device_api.ConnectedThing.MESSAGE_MAX_SIZE" href="#device_api.ConnectedThing.MESSAGE_MAX_SIZE">MESSAGE_MAX_SIZE</a></code></li>
+<li><code><a title="device_api.ConnectedThing.MESSAGE_MIN_TIME_SEC" href="#device_api.ConnectedThing.MESSAGE_MIN_TIME_SEC">MESSAGE_MIN_TIME_SEC</a></code></li>
+<li><code><a title="device_api.ConnectedThing.discover_things" href="#device_api.ConnectedThing.discover_things">discover_things</a></code></li>
+<li><code><a title="device_api.ConnectedThing.forward_update" href="#device_api.ConnectedThing.forward_update">forward_update</a></code></li>
+<li><code><a title="device_api.ConnectedThing.get_battery_level" href="#device_api.ConnectedThing.get_battery_level">get_battery_level</a></code></li>
+<li><code><a title="device_api.ConnectedThing.get_config" href="#device_api.ConnectedThing.get_config">get_config</a></code></li>
+<li><code><a title="device_api.ConnectedThing.get_dev_id" href="#device_api.ConnectedThing.get_dev_id">get_dev_id</a></code></li>
+<li><code><a title="device_api.ConnectedThing.read_input_message" href="#device_api.ConnectedThing.read_input_message">read_input_message</a></code></li>
+<li><code><a title="device_api.ConnectedThing.send_message" href="#device_api.ConnectedThing.send_message">send_message</a></code></li>
+<li><code><a title="device_api.ConnectedThing.send_update" href="#device_api.ConnectedThing.send_update">send_update</a></code></li>
+<li><code><a title="device_api.ConnectedThing.set_config" href="#device_api.ConnectedThing.set_config">set_config</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="device_api.MoveDirection" href="#device_api.MoveDirection">MoveDirection</a></code></h4>
+<ul class="">
+<li><code><a title="device_api.MoveDirection.BACKWARD" href="#device_api.MoveDirection.BACKWARD">BACKWARD</a></code></li>
+<li><code><a title="device_api.MoveDirection.FORWARD" href="#device_api.MoveDirection.FORWARD">FORWARD</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="device_api.RotateDirection" href="#device_api.RotateDirection">RotateDirection</a></code></h4>
+<ul class="">
+<li><code><a title="device_api.RotateDirection.LEFT" href="#device_api.RotateDirection.LEFT">LEFT</a></code></li>
+<li><code><a title="device_api.RotateDirection.RIGHT" href="#device_api.RotateDirection.RIGHT">RIGHT</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="device_api.VacuumCleaner" href="#device_api.VacuumCleaner">VacuumCleaner</a></code></h4>
+<ul class="two-column">
+<li><code><a title="device_api.VacuumCleaner.check_passability" href="#device_api.VacuumCleaner.check_passability">check_passability</a></code></li>
+<li><code><a title="device_api.VacuumCleaner.check_surface" href="#device_api.VacuumCleaner.check_surface">check_surface</a></code></li>
+<li><code><a title="device_api.VacuumCleaner.clean_surface" href="#device_api.VacuumCleaner.clean_surface">clean_surface</a></code></li>
+<li><code><a title="device_api.VacuumCleaner.move" href="#device_api.VacuumCleaner.move">move</a></code></li>
+<li><code><a title="device_api.VacuumCleaner.return_dock" href="#device_api.VacuumCleaner.return_dock">return_dock</a></code></li>
+<li><code><a title="device_api.VacuumCleaner.rotate" href="#device_api.VacuumCleaner.rotate">rotate</a></code></li>
+<li><code><a title="device_api.VacuumCleaner.send_debug_message" href="#device_api.VacuumCleaner.send_debug_message">send_debug_message</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.6.1</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>

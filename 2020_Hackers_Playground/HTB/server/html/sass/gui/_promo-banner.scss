@@ -1,0 +1,33 @@
+/*------------------------------------------------------------------
+  	[Promo Banner]
+------------------------------------------------------------------*/
+
+.promo-banner {
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	background: url(../img/1920x1080/02.jpg) no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+  min-height: 100%;
+
+	&:before {
+		@include position(absolute, $top: 0, $left: 0);
+		@include size(100%);
+		z-index: -1;
+		@include bg-opacity($color-heading, .4);
+		content: " ";
+	}
+
+	.promo-banner-title {
+		@include font($size: 50px);
+		color: $color-white;
+	}
+
+	.promo-banner-text {
+		@include font($size: 20px);
+		color: $color-white;
+		opacity: .8;
+	}
+}

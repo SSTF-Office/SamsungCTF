@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>WebCached</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  </head>
+  <body>
+    <div class="row center">
+      <h5 class="red-text lighten-4">WebCached</h5>
+      <p class="caption">This is simple service that can cache your favorite page.</p>
+    </div>
+    <form method="POST">
+      <div class="row center">
+        <div class="col s8 push-s2">
+          <hr>
+          <span>Enter url to view:</span>
+          <div class="input-field">
+            <div class="col s6 push-s3">
+              <input id="url" type="url" name="url">
+              <label for="url">url</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row center">
+        <button class="btn red lighten-4 waves-effect waves-light" type="submit" name="action">Submit
+          <i class="material-icons right">cloud</i>
+        </button>
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="./xero.css">
+		<script src="./xero.js"></script>
+	</head>
+	<body onload="init_index()">
+		<h1 align="center">Xero Trust Messenger</h1>
+		<p align="center"><a href="#" onclick="reset_id()">[Get a New ID]</a> <a href="./">[Inbox]</a> <a href="./write.html">[Write]</a></p>
+		<h2 align="center">Inbox</h2>
+		<p align="center">
+				Hello! Your ID is <span id="id"></span>. And your flag mate's ID is <span id="mate_id"></span>.<br>
+				<br>
+				<a href="#" onclick="refresh_msg()">[Refresh]</a><br>
+				<span id="msgs"></span>
+				<a href="#" onclick="more_msg()">[Next]</a><br>
+		</p>
+	</body>
+</html>

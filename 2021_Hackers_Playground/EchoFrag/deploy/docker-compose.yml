@@ -1,0 +1,17 @@
+version: "3.3"
+services:
+  echofrag:
+    build: .
+    ports:
+      - "31513:31337"
+    volumes:
+      - type: volume
+        source: ./FLAG
+        target: /app/FLAG
+        read_only: true
+      - type: volume
+        source: ./EchoFrag
+        target: /app/EchoFrag
+        read_only: true
+    ulimits:
+      core: 0

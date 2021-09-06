@@ -1,0 +1,90 @@
+<html>
+   <body>
+      <b>ConnectedThings</b>&trade;&reg; is our new IoT product line that includes:<br>
+       <ul>
+        <li>fridges,</li>
+        <li>light bulbs,</li>
+        <li>various sensors,</li>
+        <li>TV sets,</li>
+        <li>vacuum cleaners,</li>
+        <li>and many, many more!!!</li>
+       </ul>
+      You can run your software written in Python 3.5 on our devices using following API:
+      <br>
+       <a href="api-doc">Documentation for API of ConnectedThing</a><br>
+      <br>
+      To use the above API in your firmware place the following line at the beginning of your program: <i> from api import VacuumCleaner, MoveDirection, RotateDirection </i><br>
+      Currently we allow to test your software on vacuum cleaners in our office (only one vacuum cleaner per each floor). <br>
+      Please make sure you will not break anything, because devices are tested in our workspace!<br>
+      Vacuum cleaners use docking stations, that are charging batteries and allow to send debug messages.<br>
+      All connected things can communicate with each other using messages and can support devices,
+      that are in zones with no radio signal, by providing them with firmware updates.<br>
+      Devices that are not functioning correctly will be turned off and returned to the docking station!<br>
+      Vacuum cleaners that will run out of power outside docking stations or crash will be
+      returned back to the docking station by our employee, but please keep in mind, that it will take some time.
+      <br><br>
+      <u>Before using our testing environment, you need to register using our website, sign the Non-disclosure agreement and obtain your user ID!</u><br>
+      <br>
+      <hr>
+      <hr> <b>Contest for best autonomous vacuum cleaner algorithm</b><br><br>
+      <br>
+      Team that will clean our whole office in the smallest number of moves will win! <br>
+      Current results of the cleaning contest:
+      <a href="stats">scorebord</a><br>
+      <hr>
+      <hr> <b>Developer dashboard</b><br><br>
+      If you want to to test your firmware of vacuum cleaner:<br>
+      <form action = "uploader" method = "POST"
+         enctype = "multipart/form-data">
+         Please provide your user ID: <input type = "text" name = "user_id" /><br>
+          <b><u>Raw</u></b> Python3 code to be tested: <input type = "file" name = "file" />
+         <input type = "submit" class="send" value="Send"/>
+      </form>
+      <hr>
+      To obtain results of your previous test:<br>
+      <form action = "result" method = "POST"
+         enctype = "multipart/form-data">
+         Please provide your user ID: <input type = "text" name = "user_id" /><br>
+         <input type = "submit" class="send" value="Send"/>
+      </form>
+      <hr>
+      To obtain debug messages from your device:<br>
+      <form action = "debug_message" method = "POST"
+         enctype = "multipart/form-data">
+         Please provide your user ID: <input type = "text" name = "user_id" /><br>
+         <input type = "submit" class="send" value="Send"/>
+      </form>
+      <hr>
+      To reset testing environment (this will require manual work of our employee and can take some time):<br>
+      <form action = "reset" method = "POST"
+         enctype = "multipart/form-data">
+         Please provide your user ID: <input type = "text" name = "user_id" /><br>
+         <input type = "submit" class="send" value="Send"/>
+      </form>
+      <hr>
+      <hr>
+      <b>For clients:</b><br><br>
+      If you have already bought our device, you can download recent software updates using links below:
+       <ul>
+        <li><a href="update_lightbulb">ConnectedLightBulb,</a><br></li>
+        <li><a href="update_vacuumcleaner">ConnectedVacuumCleaner.</a><br></li>
+       </ul>
+
+      Update packages can be verified using following vendor key: <a href="vendor_public_key.pem">public_key.pem</a>.
+<!--      Update packages can be signed using following vendor key: <a href="vendor_private_key.pem">private_key.pem</a>. -->
+
+ <hr><hr><br><br>
+
+   <b> Debug endpoints (not for CTF participants): </b>
+
+     To obtain errors / exceptions from your previous test:<br>
+      <form action = "result_errors" method = "POST"
+         enctype = "multipart/form-data">
+         Please provide your user ID: <input type = "text" name = "user_id" /><br>
+         <input type = "submit" class="send" value="Send"/>
+      </form>
+
+
+
+   </body>
+</html>

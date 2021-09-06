@@ -1,0 +1,6 @@
+flask
+gunicorn
+wtforms
+passlib
+pycrypto
+sqlalchemy

@@ -1,0 +1,52 @@
+{
+  "chal_name": "Not Open Network",
+  "url": "Not_Open_Network",
+  "description": ["You are the network admin of a black market service.",
+    "You want to setup a firewall to protect the servers from hackers and police.",
+    "Your servers use IPs in 10.0.0.0/16 range.",
+    "- Drop all incoming packets except the ones heading to port 80.",
+    "- Drop all packets containing string 'police', case insensitive.",
+    "- All other packets are sent to correct destinations.",
+    "You may assume that there will be TCP packets only."],
+  "flag": "SCTF{The_B4sic_0f_SDN_4pp}",
+  "handler": "non",
+  "valid": false,
+  "packet_submit": false,
+  "timeout": 600,
+  "topology": {
+    "edges": [
+      {
+        "from": 1,
+        "length": 150,
+        "to": 2
+      },
+      {
+        "from": 3,
+        "length": 150,
+        "to": 2
+      }
+    ],
+    "nodes": [
+      {
+        "id": 1,
+        "title": "Your servers",
+        "shape": "image",
+        "label": "10.0.*.*",
+        "image": "static/jobs/img/you.svg"
+      },
+      {
+        "id": 2,
+        "title": "Your app will be installed here.",
+        "shape": "image",
+        "label": "Router",
+        "image": "static/jobs/img/router.svg"
+      },
+      {
+        "id": 3,
+        "title": "Clients",
+        "shape": "image",
+        "image": "static/jobs/img/you.svg"
+      }
+    ]
+  }
+}

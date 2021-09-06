@@ -1,0 +1,96 @@
+diff --git a/old_src/app.js b/src/app.js
+index 3e14500..ce6217a 100755
+--- a/old_src/app.js
++++ b/src/app.js
+@@ -38,6 +38,7 @@ app.use(bodyParser.urlencoded({extended: true}));
+ app.use(bodyParser.json());
+ app.use('/login', require('./src/routes/loginRoutes'));
+ app.use('/items', require('./src/routes/itemRoutes'));
++app.use('/items/bag', require('./src/routes/bagRoutes'));
+ 
+ //Catch Express error
+ app.use(function(err, req, res, next) {
+diff --git a/src/src/routes/bagRoutes.js b/src/src/routes/bagRoutes.js
+new file mode 100644
+index 0000000..02df552
+--- /dev/null
++++ b/src/src/routes/bagRoutes.js
+@@ -0,0 +1,23 @@
++var express = require('express');
++var session = require('express-session')
++var Bag = require('../models/Bag');
++var Item = require('../models/Item');
++var bagRouter = express.Router();
++
++// Defined Makeit route
++bagRouter.route('/').get(function (req, res) {
++  if(typeof req.session.uid === "undefined")
++      return res.redirect('/login');
++
++  Item.find({uid:req.session.uid}, function (err, itms){
++    var bag = new Bag();
++    if (req.query.names && req.query.names.length >= 100) {
++      req.query.names.length = 100;
++    }
++    for(var i=0; i < itms.length; i++) 
++        bag.add(itms[i].name, itms[i].value);
++    res.render("bag", {names:req.query.names, bag:bag});
++  });
++});
++
++module.exports = bagRouter;
+diff --git a/src/views/bag.ejs b/src/views/bag.ejs
+new file mode 100644
+index 0000000..f0a2ff7
+--- /dev/null
++++ b/src/views/bag.ejs
+@@ -0,0 +1,32 @@
++<!DOCTYPE html>
++<html>
++  <head>
++    <meta charset="utf-8">
++    <title>Bag List</title>
++    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
++    <link rel="stylesheet" href="/css/dic.css">
++  </head>
++  <body>
++    <div class="container">
++        <h1>Bag List</h1>
++        <table class="table table-striped">
++          <thead>
++            <tr>
++              <td class="name"><b>Name</b></td>
++              <td class="value"><b>Describe</b></td>
++            </tr>
++          </thead>
++          <tbody>
++            <% for(var i=0; i < names.length; i++) { %>
++              <tr>
++                <td class="name"><%= names[i] %></td>
++                <td class="value"><%= bag[names[i]] %></td>
++              </tr>
++            <% } %>
++          </tbody>
++        </table>
++    </div>
++  </body>
++</html>
++
++
+diff --git a/old_src/views/main.ejs b/src/views/main.ejs
+index f72e7bb..a63ea11 100644
+--- a/old_src/views/main.ejs
++++ b/src/views/main.ejs
+@@ -51,6 +51,12 @@
+             <% } %>
+           </tbody>
+         </table>
++        <form method="get" action="/items/bag">
++          <% for(var i=0; i < itms.length; i++) { %>
++          <input type="hidden" name="names[]" value="<%= itms[i].name %>">
++          <% } %>
++        <button class="btn btn-primary" type="submit">Bag List!</button>
++        </form>
+     </div>
+   </body>
+ </html>

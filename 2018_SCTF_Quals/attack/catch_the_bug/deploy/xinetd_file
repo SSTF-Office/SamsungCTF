@@ -1,0 +1,14 @@
+# default: on
+service bug
+{
+	disable		= no
+	flags		= REUSE
+	protocol	= tcp
+	socket_type	= stream
+	wait		= no
+	user		= bug
+	server		= /home/bug/bug
+	type		= UNLISTED
+	port		= 55555
+}
+

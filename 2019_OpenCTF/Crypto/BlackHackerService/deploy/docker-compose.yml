@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+        web:
+                build:
+                        context: ./web/
+                environment:
+                        APP_KEY: 'piecwyrazowwszystkiemalymiliterami'
+                        AES_KEY: '5up3rS3cr37k3Y#'
+                ports:
+                        - "127.0.0.1:8080:8080"
+                links:
+                        - dbhost
+        nginx:
+                build:
+                        context: ./nginx/
+                ports:
+                        - "80:80"
+                links:
+                        - web
+        dbhost:
+                image: mysql:5.7
+                environment:
+                        MYSQL_DATABASE: 'db'
+                        MYSQL_USER: 'dbuser'
+                        MYSQL_PASSWORD: 'dbpass'
+                        MYSQL_ROOT_PASSWORD: 'Ih637C6KqMfpF9u3uqh0NTZOGbD2qRDf'
+                ports:
+                        - '127.0.0.1:3306:3306'

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<!-- ; background-image:url(/static/sglitch.png);background-repeat: no-repeat;background-size:100% 100% -->
+<body style="background-color: black">
+    <header>
+	    <div style="display: flex;justify-content: center; margin-top: 10px">
+            <div style="float: left; width: 500px">
+            <h1 style="color: green;margin-left: 10px">LaChupacabra</h1>
+            <strong><nav>
+                <ul class="menu">
+                    <a class="btn btn-danger" style="background-color:green" href="{{ url_for('register_page') }}">Register</a>
+                    {% if verify_session == False %}
+                    <a class="btn btn-primary" style="background-color:green" href="{{ url_for('login_page') }}">Sign In</a>
+                    {% else %}
+                    <a class="btn btn-primary" style="background-color:green" href="{{ url_for('logout') }}">Logout</a>
+		    <a class="btn btn-primary" style="background-color:green" href="{{ url_for('hive') }}">Hive</a>
+                    {% endif %}
+                </ul>
+                {% if admin %}
+                <a class="btn btn-danger" href="/cookietest/">Cookie test!</a>
+                {% endif %}
+            </nav></strong>
+            </div>
+            <div style="float: right; width: 100%;height: 980px;"><img src="/static/sglitch.png" style="width: 100%;height: 100%;"></div>
+        </div>
+    </header>
+</body>
+{% endblock %}

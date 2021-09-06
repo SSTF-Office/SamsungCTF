@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+    captcha:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: captcha
+        ports:
+            - 80:80

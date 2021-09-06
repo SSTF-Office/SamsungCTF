@@ -1,0 +1,160 @@
+.data
+_pt:
+.word 0x66696e64
+.word 0x74686973
+.word 0x66696e64
+.word 0x74686973
+.word 0x66696e64
+.word 0x74686973
+.word 0x66696e64
+.word 0x74686973
+
+_ct:
+.word 0x00000000
+.word 0x00000000
+.word 0x00000000
+.word 0x00000000
+.word 0x00000000
+.word 0x00000000
+.word 0x00000000
+.word 0x00000000
+
+_ans:
+.word 0x14a96d3b
+.word 0x75dc293f
+.word 0x3756f67d
+.word 0xb352ef12
+.word 0x92433e07
+.word 0x3fb5912b
+.word 0x41b1541c
+.word 0x9ea1289f
+
+_sbox:
+.word 0x0c
+.word 0x02
+.word 0x07
+.word 0x01
+.word 0x0f
+.word 0x0e
+.word 0x03
+.word 0x0a
+.word 0x00
+.word 0x06
+.word 0x0d
+.word 0x0b
+.word 0x05
+.word 0x08
+.word 0x04
+.word 0x09
+
+.text
+; $0 = 0
+; $1 = 1
+; $2 = 4
+; $3 = 8
+; $4 = 0xffff
+addiu $1, $0, 1
+addiu $2, $0, 4
+addiu $3, $0, 8
+addiu $4, $4, 0xffff
+
+
+; $25 = i; // block iter (0..7)
+; $26 = &pt[i]
+; $27 = $ct[i]
+la $26, _pt
+la $27, _ct
+_block_iter:
+
+    ; $23 = j; // round iter (0..7)
+    ; $5 = LR / $6 = L / $7 = R / $9 = F(R, K)
+    subu $23, $23, $23
+    lw $5, 0($26)
+    _round_iter:
+
+        ; L, R = LR
+        srl $6, $5, 16
+        and $7, $5, $4
+
+        ; Use R == $7, K == $30.
+        ; ${10+i} = sbox[ith_nibble_of_R]
+        srl $10, $7, 0
+        srl $11, $7, 4
+        srl $12, $7, 8
+        srl $13, $7, 12
+        andi $10, $10, 0xf
+        andi $11, $11, 0xf
+        andi $12, $12, 0xf
+        andi $13, $13, 0xf
+        sll $10, $10, 2
+        sll $11, $11, 2
+        sll $12, $12, 2
+        sll $13, $13, 2
+        la $22, _sbox
+        addu $18, $22, $10
+        addu $19, $22, $11
+        addu $20, $22, $12
+        addu $21, $22, $13
+        lw $10, $18, 0
+        lw $11, $19, 0
+        lw $12, $20, 0
+        lw $13, $21, 0
+
+        ; $14 = $10,$11,$12,$13 combined.
+        sll $10, $10, 0
+        sll $11, $11, 4
+        sll $12, $12, 8
+        sll $13, $13, 12
+        addiu $14, $10, 0
+        addu $14, $14, $11
+        addu $14, $14, $12
+        addu $14, $14, $13
+
+        ; $9 = rol($14, 3) << 16
+        sll $15, $14, 3
+        srl $16, $14, 13
+        or $17, $15, $16
+        sll $9, $17, 16
+        ; Now $9 == F(R, K) << 16.
+
+        ; LR = {R0, L0 ^ F}
+        sll $6, $6, 16
+        xor $9, $9, $6
+        srl $6, $9, 16
+        sll $7, $7, 16
+        or $5, $6, $7
+
+    addu $23, $23, $1
+    bne $23, $3, _round_iter
+    sw $5, 0($27)
+
+addu $25, $25, $1
+addu $26, $26, $2
+addu $27, $27, $2
+bne $25, $3, _block_iter
+
+la $36, _ct
+la $37, _ans
+
+; $35 = 0..8
+subu $35, $35, $35
+_check_iter:
+
+    lw $6, 0($36)
+    lw $7, 0($37)
+    addu $35, $35, $1
+    addu $36, $36, $2
+    addu $37, $37, $2
+    bne $6, $7, _bad
+
+bne $35, $3, _check_iter
+j _good
+
+_bad:
+lui $28, 0x1234
+ori $28, $28, 0x5678
+lw $8, 0($28)
+
+_good:
+subu $1, $1, $1
+halt

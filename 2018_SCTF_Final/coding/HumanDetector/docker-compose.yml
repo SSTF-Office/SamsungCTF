@@ -1,0 +1,11 @@
+version: '2'
+services:
+    humandetector:
+        container_name: humandetector
+        build: deploy/
+        ports:
+            - "42424:42424"
+        volumes:
+            - "./deploy/src:/home/humandetector"
+        environment:
+            FLAG: "SCTF{this is test flag}"

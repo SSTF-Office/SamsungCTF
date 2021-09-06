@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="42b133fb-dd8c-44f4-ba63-c37f821436c7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Writeup.md" beforeDir="false" afterPath="$PROJECT_DIR$/Writeup.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/device/device_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/device/device_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/device/device_api_implementation.py" beforeDir="false" afterPath="$PROJECT_DIR$/device/device_api_implementation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firmwares/test_debug_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/firmwares/test_debug_message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firmwares/test_debug_message_distance.py" beforeDir="false" afterPath="$PROJECT_DIR$/firmwares/test_debug_message_distance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firmwares/test_outside_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/firmwares/test_outside_request.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firmwares/test_vacuum_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/firmwares/test_vacuum_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firmwares/test_vacuum_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/firmwares/test_vacuum_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/ctf_users.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/server/ctf_users.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/dashboard_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/dashboard_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/environment.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/environment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/rest_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/rest_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/templates/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/templates/upload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/updates/vacuumcleaner/update.py" beforeDir="false" afterPath="$PROJECT_DIR$/updates/vacuumcleaner/update.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/firmwares/test_vacuum_1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="16" selection-start-column="16" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/device/device_api_implementation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="333" column="12" selection-start-line="333" selection-start-column="6" selection-end-line="333" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/firmwares/test_vacuum_2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="16" selection-start-column="16" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/firmwares/test_outside_request.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/firmwares/test_run_fast.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#61#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/environment.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="470">
+              <caret line="521" selection-start-line="521" selection-end-line="521" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/templates/upload.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/firmwares/test_debug_message.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="16" selection-start-column="16" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/device/device_api.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/firmwares/test_inspect.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="17" selection-start-column="17" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>_ip</find>
+      <find>stoppe</find>
+      <find>nr_debug_messages_delivered</find>
+      <find>finish</find>
+      <find>environme</find>
+      <find>forwar</find>
+      <find>new_posi</find>
+      <find>dista</find>
+      <find>rotat</find>
+      <find>clean</find>
+      <find>ctf_use</find>
+      <find>MyAppRoute</find>
+      <find>forward</find>
+      <find>slow</find>
+      <find>get_env</find>
+      <find>get_environment</find>
+      <find>crashe</find>
+      <find>firmware_correc</find>
+      <find>truncat</find>
+      <find>q_message</find>
+      <find>8080</find>
+      <find>crashes</find>
+      <find>Firmware finished</find>
+      <find>nr_firmware_crashes</find>
+      <find>no new</find>
+      <find>move</find>
+      <find>stats</find>
+      <find>lightb</find>
+      <find>batter</find>
+      <find>turne</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>MyAppRoute</replace>
+      <replace>as exc:</replace>
+      <replace>print(exc)</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/server/test_environment.py" />
+        <option value="$PROJECT_DIR$/device_api.py" />
+        <option value="$PROJECT_DIR$/device/deveice_api_implementation.py" />
+        <option value="$PROJECT_DIR$/package_preparation/prepare.py" />
+        <option value="$PROJECT_DIR$/update_package/config.yaml" />
+        <option value="$PROJECT_DIR$/tests/vacuum_test.py" />
+        <option value="$PROJECT_DIR$/server/upload.html" />
+        <option value="$PROJECT_DIR$/tests/test_outside_request.py" />
+        <option value="$PROJECT_DIR$/tests/test_environment.py" />
+        <option value="$PROJECT_DIR$/tests/test_debug_message.py" />
+        <option value="$PROJECT_DIR$/update_package/prepare.py" />
+        <option value="$PROJECT_DIR$/tests/test_config.py" />
+        <option value="$PROJECT_DIR$/update_package/update.py" />
+        <option value="$PROJECT_DIR$/tests/test_exception.py" />
+        <option value="$PROJECT_DIR$/device/lightbulb_api.py" />
+        <option value="$PROJECT_DIR$/tests/example_vacuum_cleaner.py" />
+        <option value="$PROJECT_DIR$/tests/test_debug_message_distance.py" />
+        <option value="$PROJECT_DIR$/tests/test_discover.py" />
+        <option value="$PROJECT_DIR$/tests/test_get_message.py" />
+        <option value="$PROJECT_DIR$/tests/test_update_device.py" />
+        <option value="$PROJECT_DIR$/tests/test_vacuum_1.py" />
+        <option value="$PROJECT_DIR$/tests/test_vacuum_2.py" />
+        <option value="$PROJECT_DIR$/updates/prepare.py" />
+        <option value="$PROJECT_DIR$/firmwares/test_exception.py" />
+        <option value="$PROJECT_DIR$/updates/lightbulb/update.py" />
+        <option value="$PROJECT_DIR$/tests/test_vacuum.py" />
+        <option value="$PROJECT_DIR$/firmwares/example_vacuum_cleaner.py" />
+        <option value="$PROJECT_DIR$/Writeup.md" />
+        <option value="$PROJECT_DIR$/firmwares/test_inspect.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/client_sandbox/python_container/Dockerfile" />
+        <option value="$PROJECT_DIR$/firmwares/test_directory_list.py" />
+        <option value="$PROJECT_DIR$/firmwares/test_discover.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/md4coll.c" />
+        <option value="$PROJECT_DIR$/updates/vacuumcleaner/update.py" />
+        <option value="$PROJECT_DIR$/server/ctf_users.yaml" />
+        <option value="$PROJECT_DIR$/device/device_api_implementation.py" />
+        <option value="$PROJECT_DIR$/server/rest_server.py" />
+        <option value="$PROJECT_DIR$/firmwares/test_outside_request.py" />
+        <option value="$PROJECT_DIR$/server/dashboard_server.py" />
+        <option value="$PROJECT_DIR$/firmwares/test_run_fast.py" />
+        <option value="$PROJECT_DIR$/firmwares/test_discover_all.py" />
+        <option value="$PROJECT_DIR$/firmwares/test_clean.py" />
+        <option value="$PROJECT_DIR$/firmwares/test_debug_message.py" />
+        <option value="$PROJECT_DIR$/firmwares/test_debug_message_distance.py" />
+        <option value="$PROJECT_DIR$/firmwares/test_vacuum_2.py" />
+        <option value="$PROJECT_DIR$/firmwares/test_vacuum_1.py" />
+        <option value="$PROJECT_DIR$/server/environment.py" />
+        <option value="$PROJECT_DIR$/server/templates/upload.html" />
+        <option value="$PROJECT_DIR$/device/device_api.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="2110" />
+    <option name="y" value="128" />
+    <option name="width" value="1853" />
+    <option name="height" value="1076" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ctf_worms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ctf_worms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ctf_worms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ctf_worms" type="462c0819:PsiDirectoryNode" />
+              <item name="client_sandbox" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ctf_worms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ctf_worms" type="462c0819:PsiDirectoryNode" />
+              <item name="client_sandbox" type="462c0819:PsiDirectoryNode" />
+              <item name="python_container" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ctf_worms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ctf_worms" type="462c0819:PsiDirectoryNode" />
+              <item name="device" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ctf_worms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ctf_worms" type="462c0819:PsiDirectoryNode" />
+              <item name="firmwares" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ctf_worms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ctf_worms" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ctf_worms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ctf_worms" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ctf_worms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ctf_worms" type="462c0819:PsiDirectoryNode" />
+              <item name="updates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ctf_worms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ctf_worms" type="462c0819:PsiDirectoryNode" />
+              <item name="updates" type="462c0819:PsiDirectoryNode" />
+              <item name="vacuumcleaner" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/updates/vacuumcleaner" />
+      <recent name="$PROJECT_DIR$/update_package" />
+      <recent name="$PROJECT_DIR$/update_package/lightbulb" />
+      <recent name="$PROJECT_DIR$/firmwares" />
+      <recent name="$PROJECT_DIR$/server/templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/update_package/vacuumcleaner" />
+      <recent name="$PROJECT_DIR$/tests" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unittests in tests" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="ctf_worms" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Unittests in tests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="42b133fb-dd8c-44f4-ba63-c37f821436c7" name="Default Changelist" comment="" />
+      <created>1557482693141</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1557482693141</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Unittests_in_tests - 2019.05.13 at 17h 34m 24s.xml">
+      <configuration name="Unittests in tests" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1984" y="-11" width="1857" height="1092" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19923581" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Pylint" order="0" />
+      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="3" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.3291536" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.031282585" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/device/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/update_package/signature.pem" />
+    <entry file="file://$PROJECT_DIR$/client_sandbox/device_api_implementation.py" />
+    <entry file="file://$PROJECT_DIR$/server/test_environment.py" />
+    <entry file="file://$PROJECT_DIR$/server/.pylintrc" />
+    <entry file="file://$PROJECT_DIR$/server/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client_sandbox/ece0d2a8be67f613ed6a67af85f3604d8d68dfd7update.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/templates/device_api.html" />
+    <entry file="file://$PROJECT_DIR$/device/lightbulb_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/updates/lightbulb/config.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_environment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_update_device.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_vacuum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-850" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/updates/prepare.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/updates/lightbulb/update.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client_sandbox/python_container/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/md4coll.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="77" column="25" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/updates/vendor_public.pem">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/updates/vacuumcleaner/config.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/ctf_users.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/dashboard_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-75">
+          <caret line="303" selection-start-line="303" selection-end-line="303" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/rest_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-250">
+          <caret line="244" column="21" selection-start-line="244" selection-start-column="21" selection-end-line="244" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/updates/vacuumcleaner/update.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="575">
+            <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Writeup.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="510">
+            <caret line="34" column="49" lean-forward="true" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firmwares/test_clean.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firmwares/test_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="29" lean-forward="true" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firmwares/test_debug_message_distance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firmwares/test_directory_list.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firmwares/test_discover.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="31" selection-start-column="16" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firmwares/test_discover_all.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firmwares/test_exception.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firmwares/test_get_message.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firmwares/test_outside_request.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firmwares/test_run_fast.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firmwares/test_vacuum_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firmwares/test_vacuum_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/device/device_api_implementation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="333" column="12" selection-start-line="333" selection-start-column="6" selection-end-line="333" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firmwares/test_inspect.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/environment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="521" selection-start-line="521" selection-end-line="521" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/templates/upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firmwares/test_debug_message.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/device/device_api.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+</project>

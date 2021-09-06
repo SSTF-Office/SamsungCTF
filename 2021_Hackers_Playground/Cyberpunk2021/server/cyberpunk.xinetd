@@ -1,0 +1,11 @@
+service cyberpunk
+{
+    disable = no
+    socket_type = stream
+    protocol = tcp
+    wait = no
+    user = samurai
+    server = /home/samurai/cyberpunk
+    type = UNLISTED
+    port = 1337
+}

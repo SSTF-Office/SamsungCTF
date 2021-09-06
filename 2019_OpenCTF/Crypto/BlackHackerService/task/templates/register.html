@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<body style="background-color:black">
+	<div class="form-group" style="margin-left: 10px">
+		<h4 style="color:green">Register</h4>
+		<br>
+                {% from "_formhelpers.html" import render_field %}
+		<form method=post action="/register/">
+			<dl>
+				{{render_field(form.username)}}
+				{{render_field(form.email)}}
+				{{render_field(form.password)}}
+				{{render_field(form.confirm)}}
+				{{render_field(form.accept_tos)}}
+			</dl>
+			<p><input type=submit value=Register></p>
+		</form>
+		
+		{% if error %}
+			<p class="error"><strong>Error:</strong>{{error}}</p>
+		{% endif %}
+
+	</div>
+</body>
+
+{% endblock %}

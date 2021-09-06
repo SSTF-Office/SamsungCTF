@@ -1,0 +1,486 @@
+.CODE
+MOVE R2 C4
+OUTP R2I
+ADD R2 R2 C1
+SUB M0 M0 C1
+SUBEQ M0 C0 C6
+JUMP C1
+MOVE R2 C53
+OUTP R2I
+ADD R2 R2 C1
+SUB M49 M49 C1
+SUBEQ M49 C0 C12
+JUMP C7
+MOVE R2 C116
+OUTP R2I
+ADD R2 R2 C1
+SUB M112 M112 C1
+SUBEQ M112 C0 C18
+JUMP C13
+INP M138
+INP M139
+INP M140
+INP M141
+MOVE M142 M138
+SUBEQ M142 C523124044 C25
+JUMP C32
+MOVE R2 C150
+OUTP R2I
+ADD R2 R2 C1
+SUB M146 M146 C1
+SUBEQ M146 C0 C31
+JUMP C26
+HALT
+SUBEQ M138 C51590912 C40
+MOVE R2 C171
+OUTP R2I
+ADD R2 R2 C1
+SUB M167 M167 C1
+SUBEQ M167 C0 C39
+JUMP C34
+HALT
+MOVE R2 C205
+OUTP R2I
+ADD R2 R2 C1
+SUB M201 M201 C1
+SUBEQ M201 C0 C46
+JUMP C41
+MOVE R2 C249
+OUTP R2I
+ADD R2 R2 C1
+SUB M245 M245 C1
+SUBEQ M245 C0 C52
+JUMP C47
+MOVE R2 C302
+OUTP R2I
+ADD R2 R2 C1
+SUB M298 M298 C1
+SUBEQ M298 C0 C58
+JUMP C53
+MOVE R2 C1024
+INP R2I
+ADD R2 R2 C1
+SUB M314 M314 C1
+SUBEQ M314 C0 C64
+JUMP C59
+MOVE R2 C1024 // R2 = buf
+MOVE R3 C3072 // R3 = dst
+MOVE M318 C256 // i_len <- 0x100
+MOVE M322 C0 // i <- 0
+MOVE M326 C7 // j_len <- 7
+MOVE M330 C0 // j <- 0
+MOVE R4 C0 // R4 = r <- 0
+MOVE M334 C7 // k_len <- 7
+MOVE M338 C0 // k <- 0
+SHL R6 C1 M330 // R6 = m <- 1 << j
+SHL R5 M322 C2 // R5 = addr <- i << 2
+SHL R7 M322 C1 // R7 = z <- i << 1
+ADD R5 R5 R7 // addr <- i * 4 + i * 2
+ADD R5 R5 M322 // addr <- i * 6 + i
+ADD R5 R5 M338 // addr <- i * 7 + k
+ADD R5 R2 R5 // addr <- buf + i * 7 + k
+AND R5 R5I R6 // t <- [buf + i * 7 + k] & m
+SHR R5 R5 M330 // t <- t >> j
+OR R4 R4 R5 // r <- r | t
+AND R6 R4 C63 // R6 = u <- r & 0x3f
+SHL R6 R6 C1 // u <- u << 1
+AND R7 R4 C64 // R7 = v <- r & 0x40
+SHR R7 R7 C6 // v <- v >> 6
+OR R4 R6 R7 // r <- u | v
+ADD M338 M338 C1 // k <- k + 1
+SUB M334 M334 C1 // k_len <- k_len - 1
+SUBEQ M334 C0 C92 // if k_len == 0 then goto 92
+JUMP C73
+SHL R5 M322 C2 // addr <- i << 2
+SHL R6 M322 C1 // z <- i << 1
+ADD R5 R5 R6 // addr <- i * 4 + i * 2
+ADD R5 R5 M322 // addr <- i * 6 + i
+ADD R5 R5 M330 // addr <- i * 7 + j
+ADD R5 R3 R5 // addr <- dst + i * 7 + j
+MOVE R5I R4 // [buf + i * 7 + j] <- r
+ADD M330 M330 C1 // j <- j + 1
+SUB M326 M326 C1 // j_len <- j_len - 1
+SUBEQ M326 C0 C103 // if j_len == 0 then goto 103
+JUMP C70
+ADD M322 M322 C1 // i <- i + 1
+SUB M318 M318 C1 // i_len <- i_len - 1
+SUBEQ M318 C0 C107 // if i_len == 0 then goto 107
+JUMP C68
+MOVE R2 C346
+OUTP R2I
+ADD R2 R2 C1
+SUB M342 M342 C1
+SUBEQ M342 C0 C113
+JUMP C108
+MOVE R2 C3072
+OUTP R2I
+ADD R2 R2 C1
+SUB M359 M359 C1
+SUBEQ M359 C0 C119
+JUMP C114
+HALT
+
+.DATA
+2d // 00
+00
+00
+00
+57 // 04
+65
+6c
+63
+6f
+6d
+65
+20
+74
+6f
+20
+74
+68
+65
+20
+77
+6f
+72
+6c
+64
+20
+6f
+66
+20
+52
+65
+76
+65
+72
+73
+65
+20
+45
+6e
+67
+69
+6e
+65
+65
+72
+69
+6e
+67
+21
+0a
+3b // 49
+00
+00
+00
+42 // 53
+65
+66
+6f
+72
+65
+20
+79
+6f
+75
+20
+65
+6e
+74
+65
+72
+20
+74
+68
+69
+73
+20
+77
+6f
+72
+6c
+64
+2c
+20
+79
+6f
+75
+20
+6e
+65
+65
+64
+20
+74
+6f
+20
+68
+61
+76
+65
+20
+74
+68
+65
+20
+70
+61
+73
+73
+63
+6f
+64
+65
+0a
+16 // 112
+00
+00
+00
+57 // 116
+68
+61
+74
+20
+69
+73
+20
+74
+68
+65
+20
+70
+61
+73
+73
+63
+6f
+64
+65
+3f
+0a
+00 // 138
+00
+00
+00
+00 // 142
+00
+00
+00
+11 // 146
+00
+00
+00
+59 // 150
+6f
+75
+20
+61
+72
+65
+20
+63
+6f
+72
+72
+65
+63
+74
+21
+0a
+1e // 167
+00
+00
+00
+59 // 171
+6f
+75
+20
+67
+61
+76
+65
+20
+6d
+65
+20
+61
+20
+77
+72
+6f
+6e
+67
+20
+70
+61
+73
+73
+63
+6f
+64
+65
+21
+0a
+28 // 201
+00
+00
+00
+48 // 205
+65
+6c
+6c
+6f
+2c
+20
+74
+68
+69
+73
+20
+69
+73
+20
+74
+68
+65
+20
+73
+65
+63
+72
+65
+74
+20
+65
+6e
+63
+6f
+64
+69
+6e
+67
+20
+72
+6f
+6f
+6d
+0a
+31 // 245
+00
+00
+00
+47 // 249
+69
+76
+65
+20
+6d
+65
+20
+61
+20
+73
+74
+72
+69
+6e
+67
+2c
+20
+74
+68
+65
+6e
+20
+49
+27
+6c
+6c
+20
+73
+68
+6f
+77
+20
+79
+6f
+75
+20
+74
+68
+65
+20
+72
+65
+73
+75
+6c
+74
+2e
+0a
+0c // 298
+00
+00
+00
+59 // 302
+6f
+75
+72
+20
+69
+6e
+70
+75
+74
+3a
+0a
+00 // 314
+07
+00
+00
+00 // i_len 318
+00
+00
+00
+00 // i 322
+00
+00
+00
+00 // j_len 326
+00
+00
+00
+00 // j 330
+00
+00
+00
+00 // k_len 334
+00
+00
+00
+00 // k 338
+00
+00
+00
+0d // 342
+00
+00
+00
+59 // 346
+6f
+75
+72
+20
+6f
+75
+74
+70
+75
+74
+3a
+0a
+00 // 359
+07
+00
+00

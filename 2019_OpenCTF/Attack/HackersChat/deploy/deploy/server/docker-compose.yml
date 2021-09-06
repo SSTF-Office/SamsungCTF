@@ -1,0 +1,8 @@
+version: '3'
+services:
+  chat:
+    build: .
+    user: ctf
+    ports:
+      - "1337:1337"
+

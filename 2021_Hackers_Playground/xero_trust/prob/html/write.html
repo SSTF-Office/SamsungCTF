@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<script src="./xero.js"></script>
+	</head>
+	<body onload="init_write()">
+		<h1 align="center">Xero Trust Messenger</h1>
+		<p align="center"><a href="#" onclick="reset_id()">[Get a New ID]</a> <a href="./">[Inbox]</a> <a href="./write.html">[Write]</a></p>
+		<h2 align="center">Write</h2>
+		<form name=msgform>
+			<p align="center">
+				From : <span id="id"></span><br>
+				To : <input name="to" type="number" min=2 max=4294967295><br>
+				<textarea name="msg" style="margin: 0px; width: 400px; height: 300px;"></textarea><br>
+				<input type="button" onclick="send_msg()" value="Send">
+			</p>
+		</form>
+	</body>
+</html>

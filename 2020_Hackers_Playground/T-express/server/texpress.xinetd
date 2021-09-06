@@ -1,0 +1,12 @@
+service texpress
+{
+    disable = no
+    socket_type = stream
+    protocol    = tcp
+    wait        = no
+    user        = texpress
+    server      = /home/texpress/t_express
+    type        = UNLISTED
+    port        = 1337
+}
+

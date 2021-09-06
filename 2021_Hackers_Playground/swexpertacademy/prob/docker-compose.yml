@@ -1,0 +1,21 @@
+version: "3.3"
+services:
+  web:
+    build: ./web
+    networks:
+      - intranet
+      - internet
+    ports:
+      - "${SOFTECH_PORT}:3000"
+    environment:
+      - EXECURL=http://executor:3000
+  executor:
+    networks:
+      - intranet
+    build: ./executor
+networks:
+  intranet:
+    driver: bridge
+    internal: true
+  internet:
+    driver: bridge

@@ -1,0 +1,33 @@
+//This lexer has been writen with help of "Real world OCaml" book By Yaron Minsky, Anil Madhavapeddy, Jason Hickey (chapter 16)
+{
+
+module Lexer
+
+open Microsoft.FSharp.Text.Lexing
+open System
+open Parser
+
+exception SyntaxError of string
+
+let lexeme = LexBuffer.LexemeString
+
+let newline (lexbuf: LexBuffer<_>) = 
+  lexbuf.StartPos <- lexbuf.StartPos.NextLine
+}
+
+
+let LAMBDA = 'λ'
+let DOT = '.'
+let white = [' ' '\t']+
+let newline = '\r' | '\n' | "\r\n"
+
+rule read =
+  parse
+  | white    { WHITE }
+  | newline  { newline lexbuf; read lexbuf }
+  | 'λ'      { LAMBDA }
+  | '.'      { DOT }
+  | '('      { LEFT_PAREN }
+  | ')'      { RIGHT_PAREN }
+  | eof      { EOF }
+  | ['a'-'z' 'A'-'Z']['a'-'z' 'A'-'Z' '0'-'9']* { ID(lexeme lexbuf) }
