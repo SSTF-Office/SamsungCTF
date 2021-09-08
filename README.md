@@ -30,5 +30,5 @@ Hacker's Playground is the on-line version of OpenCTF.
 
 ## License
 
-Challenges and write-ups in this repository follw [CC BY-NC-SA-4.0](CC-BY-NC-SA-4.0). Thus, it is free to use for academic purpose or individual research, but not for commercial use.
+Challenges and write-ups in this repository follow [CC BY-NC-SA-4.0](CC-BY-NC-SA-4.0). Thus, it is free to use for academic purpose or individual research, but not for commercial purpose.
 
