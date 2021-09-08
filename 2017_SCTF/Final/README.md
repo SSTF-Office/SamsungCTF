@@ -1,4 +1,4 @@
-# 2018 SCTF - Final Round
+# 2017 SCTF - Final Round
 
 ## Challenges
 
