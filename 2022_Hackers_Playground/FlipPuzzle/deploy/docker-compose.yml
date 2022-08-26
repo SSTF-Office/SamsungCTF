@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+  pancake:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: flip-puzzle
+    ports:
+      - 8098:8080

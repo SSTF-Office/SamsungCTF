@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+  deploy:
+    build: ./deploy
+    container_name: powdle
+    restart: always
+    ports:
+      - 9999:9999
+    depends_on:
+      - hofserver
+
+  hofserver:
+    image: tiangolo/uwsgi-nginx-flask:latest
+    container_name: hofserver
+    expose:
+      - 80
+    volumes:
+      - ./deploy/hof.py:/app/main.py

@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  server:
+    container_name: sctf2022_imageium
+    build: 
+      context: .
+    ports:
+      - 37359:80
+    volumes:
+      - ./pilcve:/var/www/pilcve:ro
+    restart: always
+
+

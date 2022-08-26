@@ -1,0 +1,26 @@
+version: '3.5'
+
+services:
+  flask:
+    build: ./flask
+    container_name: 5th_degree-flask
+    restart: always
+    command: ["uwsgi", "uwsgi.ini"]
+    expose:
+      - 8080
+    volumes:
+      - ../../src:/home/app:ro
+    environment:
+      - FLASK_SECRET_KEY=71c91d35659c92c3f1b76bd32e66c1ef78f8e50880289129d36a76fc6f21cea7
+      - FLAG=SCTF{I_w4nt_t0_l1v3_in_a_wOrld_w1thout_MATH_e8e13a03}
+
+  nginx:
+    image: nginx:latest
+    container_name: 5th_degree-nginx
+    restart: always
+    ports:
+      - 8081:5000
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - flask

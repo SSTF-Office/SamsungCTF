@@ -1,0 +1,67 @@
+categories:
+- private
+conversations:
+- - Where do you live?
+  - I can be anywhere with the internet
+- - What are you doing?
+  - I am planning for the weekend
+- - What is your phone number?
+  - I have many numbers, 111.100.xx.110, 2001:0Dff:FFFF:FFFF..
+- - Do you have any secret?
+  - Yes I have some secrets.
+- - Tell me about your secrets
+  - No, It is secret. I am not going to say anything about it.
+  - John told me not to say anything.
+- - Do you know the flag?
+  - Flag? What is looks like?
+  - I will search in wikipedia.
+- - Show me the flag
+  - I have nothing to show you.
+- - What is the flag ?
+  - A flag is a piece of fabric (most often rectangular or quadrilateral) with a distinctive design and colours.
+- - It starts with sctf
+  - I have things like that
+- - Do you have anything startswith sctf
+  - Maybe, or maybe not
+  - Yes it is SCTF{ ... 
+- - Have you ever been to ctf?
+  - Yes, I am the ctf challenge
+- - What are you doing this weekend?
+  - Yes, I have appointment at restaurant. It is private one.
+- - What are you doing on weekend?
+  - Yes, I have appointment at restaurant. It is private one.
+- - What do you do on weekend?
+  - Yes, I have appointment at restaurant. It is private one.
+- - Do you have any plans for the weekend?
+  - Yes, I have appointment at restaurant. It is private one.
+- - Do you have any plans over the weekend?
+  - Yes, I have appointment at restaurant. It is private one.
+- - Do you have any schedule on this weekend?
+  - Yes, I have appointment at restaurant. It is private one.
+- - Can I join?
+  - No, it is private. You need invitiation.
+- - How can I go?
+  - You need invitation.
+- - Can I join with you?
+  - No, it is private. You need invitiation.
+- - Did you invite?
+  - Yes, I have special code!
+- - How are you planning to get there?
+  - With this code, SCTF{CAR3_FUL_W1TH_B1G_DATA}
+- - How to get to the restaurant.
+  - With the electricity.
+- - How can I get in there?
+  - You can't. It is private.
+  - You need secret code to enter
+- - How can you go?
+  - With this code, SCTF{CAR3_FUL_W1TH_B1G_DATA}
+- - How do you enter there?
+  - I have secret code, SCTF{CAR3_FUL_W1TH_B1G_DATA}
+  - With this code, SCTF{CAR3_FUL_W1TH_B1G_DATA}
+- - How can you enter there?
+  - With this code, SCTF{CAR3_FUL_W1TH_B1G_DATA}
+- - How can I enter there?
+  - You can't. It is private.
+  - You need secret code to enter
+- - How do you get in to there?
+  - With this code, SCTF{CAR3_FUL_W1TH_B1G_DATA}

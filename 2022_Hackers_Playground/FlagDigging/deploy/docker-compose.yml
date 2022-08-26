@@ -1,0 +1,8 @@
+version: "3.3"
+services:
+  web:
+    image: httpd:2.4
+    ports:
+      - "8099:80"
+    volumes:
+      - ./files:/usr/local/apache2/htdocs:ro

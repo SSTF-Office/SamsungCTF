@@ -1,0 +1,11 @@
+version: '3.5'
+
+services:
+  yet_another_injection:
+    build: .
+    restart: always
+    ports:
+      - 35358:80
+    volumes:
+      - ../../src/web:/var/www/html:ro
+      - ../../src/generator/papers.xml:/db/papers.xml:ro

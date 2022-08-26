@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  sevensgamehigh:
+    build: 
+      context: .
+    ports:
+        - 7777:7777

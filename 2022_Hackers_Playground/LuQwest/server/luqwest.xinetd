@@ -1,0 +1,14 @@
+service luqwest
+{
+    disable = no
+    socket_type = stream
+    protocol = tcp
+    wait = no
+    user = player
+    server = /home/player/luqwest
+    server_args = /home/player/script.lua
+    type = UNLISTED
+    port = 1337
+    
+    per_source	= 2
+}

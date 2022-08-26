@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{data['name']}}</title>
+    <!-- Bootstrap core CSS -->
+<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/static/css/main.css" rel="stylesheet">
+  </head>
+  <body>
+<header>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container d-flex justify-content-between">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+          <strong>{{data['name']}}</strong>
+      </a>
+      {% if idx >= data['vids']|length %}
+      <button class="btn btn-success" id="btnCert">Get Certificate</button>
+      {% endif %}
+    </div>
+  </div>
+</header>
+
+<main role="main">
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        {% for vid in data['vids'] %}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="card-img-top" src={{vid['thumbnail']}} width="100%" height="225">
+            <div class="card-body">
+              <p class="card-text">
+              {{vid['name']}}
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    {% if loop.index0 == idx %}
+                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#modal{{loop.index0}}" data-backdrop="static">
+                        Start
+                    </button>
+                    {% else %}
+                    <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#modalErr">
+                        {% if loop.index0 < idx %}
+                            Finished
+                        {% else %}
+                            Not yet
+                        {% endif %}
+                    </button>
+                    {% endif %}
+                </div>
+                <small class="text-muted">{{vid['desc']}}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <!-- Modals -->
+  {% for vid in data['vids'] %}
+  {% if loop.index0 == idx %}
+  <div class="modal fade" id="modal{{loop.index0}}" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">{{vid['name']}}</h5>
+        </div>
+        <div class="modal-body">
+            <video id="eduVideo" width=100% height=100%>
+                <source src="{{vid['url']}}" type="{{vid['type']}}">
+                <p>Not supported Browser..?</p>
+            </video>
+            <div class="float-right" id="videoInfo">0:00 / 0:00 (x1.0)</div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <div>
+            <button type="button" class="btn btn-primary"   id="btnPlay">Play</button>
+            <button type="button" class="btn btn-secondary" id="btnStop">Stop</button>
+            <button type="button" class="btn btn-secondary" id="btnSlow">Slower</button>
+            <button type="button" class="btn btn-secondary" id="btnFast">Faster</button>
+          </div>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+  <div class="modal fade" id="modalErr" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Invalid Course</h5>
+        </div>
+        <div class="modal-body">
+            Not this course!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="text-muted">
+  <div class="container">
+    <p class="float-right">
+      <a href="#">Back to top</a>
+    </p>
+  </div>
+</footer>
+
+
+      <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+      <script src="/static/js/bootstrap.bundle.min.js"></script>
+      <script src="/static/js/main.js"></script>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <script>
+            alert("{{messages[0]}}");
+        </script>
+    {% endif %}
+{% endwith %}
+  </body>
+</html>

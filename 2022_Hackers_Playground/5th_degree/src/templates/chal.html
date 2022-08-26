@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="w-100 mx-auto shadow-lg p-3 my-5 bg-white rounded">
+				<div class="py-3 px-5">
+					<h2>5th-degree: Round {{ round }}</h2>
+				</div>
+
+				<div class="text-center">
+					\[ {{ challenge }} \]
+
+					Find <b>minimum</b> and <b>maximum</b> of y, where \( {{ mn }} \le x \le {{ mx }} \).
+				</div>
+				<div class="w-75 pt-5 mx-auto">
+					<form action="/chal" method="POST">
+						<label for="min">Minimum:</label>
+						<input type="text" id="min" name="min" required>
+						<label for="max">Maximum:</label>
+						<input type="text" id="max" name="max" required>
+						<button type="submit">Submit</button>
+					</form>
+				</div>
+				{% if msg %}
+				<div style="background-color:#fff1d6;border-color:#ffa900 !important;padding:10px;margin:20px;border-left:6px solid; border-radius:5px" class="w-75 mx-auto">{{ msg }}</div>
+				{% endif %}
+			</div>
+		</div>
+	</body>
+</html>

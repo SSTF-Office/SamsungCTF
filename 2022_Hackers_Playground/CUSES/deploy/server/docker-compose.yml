@@ -1,0 +1,10 @@
+version: '3.5'
+
+services:
+  cuses:
+    build: .
+    restart: always
+    ports:
+      - 35357:80
+    volumes:
+      - "../../src:/var/www/html:ro"

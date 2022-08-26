@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  jupyter_server:
+    build:
+      context: jupyter_server
+    ports:
+      - 8000:8000
+  tester:
+    build:
+      context: tester
+    depends_on:
+      - jupyter_server
+    environment:
+      - JUPYTER_HOST=http://jupyter_server:8000
+      - WATCHER_ID=sub-admin
+      - WATCHER_PASSWORD=sub-admin
+      - SELENIUM_REMOTE=selenium-chrome:4444
+      - ADMIN_ID=admin
+      - ADMIN_PASSWORD=jupyt3rhub_adm1n

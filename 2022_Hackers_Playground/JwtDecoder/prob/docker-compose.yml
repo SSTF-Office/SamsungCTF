@@ -1,0 +1,9 @@
+version: '3'
+services:
+  jwt-decoder:
+    image: sctf-jwt-decoder
+    build:
+      context: .
+    container_name: jwt-decoder
+    ports:
+      - "3000:3000"

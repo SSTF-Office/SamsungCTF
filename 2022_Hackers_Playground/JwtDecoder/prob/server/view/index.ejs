@@ -1,0 +1,41 @@
+<!Doctype html>
+<html>
+    <head></head>
+    <body onload="bar();">
+        <h1>JWT Decoder</h1>
+        <h2>Header</h2>
+        <pre><%= typeof header === 'string' ? header : "Empty" %></pre>
+        <h2>Body</h2>
+        <pre><%= typeof body === 'string' ? body : "Empty" %></pre>
+        <h2>Signature</h2>
+        <pre><%= typeof signature === 'string' ? signature : "Empty" %></pre>
+        <h2>Error Message</h2>
+        <pre><%= typeof error === 'string' ? error : "Empty" %></pre>
+        <hr>
+        <h1>Set JWT Value</h1>
+        <textarea id="input" style="width:500px;height:250px;">
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+        </textarea>
+        <br />
+        <button onclick="foo();">Apply</button>
+        <script>
+            function bar() {
+                const defaultValue = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
+                let value = "";
+                if (document.cookie.length <= 4) {
+                    value = defaultValue;
+                } else {
+                    value = document.cookie.split("jwt=")[1];
+                    if (value[value.length - 1] == ';') {
+                        value = value.substr(0, value.length - 1);
+                    }
+                }
+                document.getElementById("input").value = value;
+            }
+            function foo() {
+                document.cookie =`jwt=${document.getElementById("input").value};`;
+                location.reload();
+            }
+        </script>
+    </body>
+</html>

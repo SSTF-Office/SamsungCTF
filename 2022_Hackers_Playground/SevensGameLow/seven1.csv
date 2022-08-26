@@ -1,0 +1,30 @@
+Seven's Game - Low
+Expectation
+Min,Avg,Max
+0.414666,0.578445,0.97296
+
+Base Game
+Total Combination,1000000
+Symbol,Reel1,Reel2,Reel3
+S1,15,15,14
+S2,15,15,15
+S3,30,30,23
+B1,0,0,33
+BL,40,40,15
+
+Pay Combination,Reel1,Reel2,Reel3,Hits,Pay,Total Pay
+S1 S1 S1,15,15,14,3150,5,15750
+S2 S2 S2,15,15,15,3375,4,13500
+S3 S3 S3,30,30,23,20700,3,62100
+SX SX SX,60,60,52,159975,2,319950
+XX XX B1,100,100,33,330000,1.702,561660
+
+Bonus Game
+Total Combination,100,Maximum,1.702,Minimum,0.0102,Average,0.5065
+Color Combination,Hits,Pay1,Pay2,Pay3,Pay4,Min,Max,Avg
+2 2 1 2,33,65,0,5,3,0,65,18.25
+2 0 0 2,25,5,75,0,2,0,75,20.5
+1 1 2 2,17,3,15,10,85,3,85,28.25
+0 0 1 0,17,10,15,125,0,0,125,37.5
+2 1 0 2,8,0,20,15,115,0,115,37.5
+

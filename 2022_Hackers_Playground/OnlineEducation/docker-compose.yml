@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+  deploy:
+    build: ./deploy
+    container_name: online-edu
+    restart: always
+    expose:
+      - 9999
+
+  nginx:
+    image: nginx:latest
+    container_name: online-edu-nginx
+    ports:
+      - 9999:5555
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - deploy

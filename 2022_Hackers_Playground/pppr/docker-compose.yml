@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  server:
+    build: 
+      context: .
+    ports:
+      - 35359:1337
+    restart: always
+

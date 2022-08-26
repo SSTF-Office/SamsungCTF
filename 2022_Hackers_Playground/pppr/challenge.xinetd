@@ -1,0 +1,12 @@
+service challenge
+{
+    disable = no
+    socket_type = stream
+    protocol    = tcp
+    wait        = no
+    user        = challenger
+    server      = /usr/bin/setunbuffered32
+    server_args = /home/challenger/challenge
+    type        = UNLISTED
+    port        = 1337
+}

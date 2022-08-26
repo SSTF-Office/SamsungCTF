@@ -1,0 +1,12 @@
+service prob
+{
+    disable = no
+    flags = REUSE
+    socket_type = stream
+    protocol = tcp
+    user = guest
+    wait = no
+    server = /app.py
+    type = UNLISTED
+    port = 8080
+}

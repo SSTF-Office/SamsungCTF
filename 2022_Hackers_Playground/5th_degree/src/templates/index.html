@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="w-75 mx-auto shadow-lg p-3 my-5 bg-white rounded">
+				<h2>5th degree</h2>
+				<div class="my-2">
+				<p>In the next page, you'll get an equation and range about \(x\).<br>
+				Please find minimum and maximum values of \(y\) while \(x\) is in the given range.</div>
+				For your convinience, equations are disigned to have integer solutions.<br>
+				You should pass {{ rounds }} rounds in {{ timeout }} seconds.</p>
+				Click the buttion when you're ready.
+				<form action="/chal">
+					<button type="submit" class="my-3 btn btn-primary">Start</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

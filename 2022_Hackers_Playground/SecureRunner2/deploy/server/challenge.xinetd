@@ -1,0 +1,14 @@
+service challenge
+{
+    disable = no
+    cps			= 64 1
+    instnaces   = 64
+    per_source  = 4
+    socket_type = stream
+    protocol    = tcp
+    wait        = no
+    user        = challenger
+    server      = /home/challenger/challenge
+    type        = UNLISTED
+    port        = 1337
+}

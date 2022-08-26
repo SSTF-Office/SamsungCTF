@@ -1,0 +1,15 @@
+#sudo docker run -v /var/run/docker.sock:/var/run/docker.sock --privileged -p 31338:31338 -it pipe_proxy
+version: "3.3"
+services:
+    pipe_proxy:
+      build: .
+      port:
+        - "31338:31338"
+      volumes:
+        - type:volume
+          source: /var/run/docker.sock
+          target: /var/run/docker.sock
+      ulimits:
+        core:0
+      command: ["--privileged","-it"]
+
