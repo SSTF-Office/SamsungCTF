@@ -1,8 +1,7 @@
 #!/bin/sh
-NAME="timming"
+NAME="cache"
 
 SHARED=""
 OPTION="--rm -it"
 
-docker run --name $NAME $PORT $OPTION $SHARED $NAME:1.0
-
+sudo docker run --name $NAME $PORT $OPTION $SHARED $NAME:1.0 /bin/bash

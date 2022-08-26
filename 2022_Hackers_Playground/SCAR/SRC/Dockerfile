@@ -1,17 +1,18 @@
-FROM ubuntu:22.04
+FROM debian
 RUN apt-get update
-RUN apt-get -y install --no-install-recommends python3-minimal netcat socat vim
-RUN useradd -d /home/prob prob
+RUN apt-get -y install --no-install-recommends netcat procps wget 
+RUN apt-get -y install gcc
 RUN useradd -d /home/guest guest
+RUN useradd -d /home/prob prob
 
-COPY ./AttackMe.py /AttackMe.py
+COPY ./AttackMe /
+COPY ./libpd.so /lib/
+COPY ./run.sh /run.sh
 COPY ./flag /flag
-COPY ./init.sh /init.sh
+RUN chown prob:prob /flag
+RUN chmod 600 /flag
+RUN chmod +x /AttackMe
+RUN chmod +x /run.sh
 
-RUN chmod +x /init.sh
-RUN chmod +x /AttackMe.py
-RUN chown prob:prob ./flag
-RUN chmod 700 ./flag
-
-ENTRYPOINT ["timeout","60","/init.sh"]
-
+#ENTRYPOINT ["/run.sh"]
+ENTRYPOINT ["timeout","300","/run.sh"]

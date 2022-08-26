@@ -1,12 +1,11 @@
-# SSTF 2022 
-- prequel of cache attack.
-# info 
-- Time based attack.
-- The pow function is used in AttackMe.py.
-- It takes time depend on flag values when pow function run.
-- You can measure time with "time command" when attackMe.py runs.
+# SSTF
+sstf problem from 2022~
 
-# index
-- SRC: challenge docker files.
-- EXPLOIT: sample PoC exploit
+# INFO 
+- ARMv8 cache side channel attack.
+- ARMv8 has cache flush instruction and flush+reload attack is works. 
+
+# INDEX
 - proxy: connection receiver.
+- SRC: challenge files.
+- EXPLOIT: PoC exploit

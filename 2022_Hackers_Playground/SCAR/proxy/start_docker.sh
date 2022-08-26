@@ -1,2 +1,2 @@
 #!/bin/sh
-sudo docker run --name timming_proxy --rm -v /var/run/docker.sock:/var/run/docker.sock -p 31339:31339 -idt timming_proxy
+sudo docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -p 31340:31340 -idt cache_proxy

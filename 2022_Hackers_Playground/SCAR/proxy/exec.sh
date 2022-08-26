@@ -1,2 +1,2 @@
-#!/bin/sh
-docker run --rm -i "timming:1.0"
+#!/bin/bash
+docker run --rm -i "cache:1.0"

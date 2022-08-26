@@ -1,3 +1,3 @@
 #!/bin/sh
-NAME="timming_proxy"
+NAME="cache_proxy"
 docker build --tag $NAME ./
