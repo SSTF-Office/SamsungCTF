@@ -1,0 +1,22 @@
+version: '3.5'
+
+services:
+  flask:
+    build: ./flask
+    container_name: meaas-flask
+    restart: always
+    expose:
+      - 8000
+    volumes:
+      - ../flag.txt:/home/app/flag.txt:ro
+      - ../../src/rsaparams:/secret/rsaparams:ro
+
+  nginx:
+    image: nginx:latest
+    container_name: meaas-nginx
+    ports:
+      - 35352:5000
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - flask

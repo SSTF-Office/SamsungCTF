@@ -1,0 +1,9 @@
+\connect books
+
+ALTER DATABASE books OWNER TO postgres;
+ALTER SCHEMA books OWNER TO postgres;
+ALTER ROLE books WITH NOSUPERUSER NOINHERIT NOCREATEROLE NOCREATEDB LOGIN NOREPLICATION NOBYPASSRLS;
+ALTER ROLE books SET statement_timeout='2s';
+
+GRANT SELECT ON TABLE books.impl_books TO books;
+GRANT SELECT ON TABLE books.impl_t0p5ecr3t TO books;

@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@hapi/hapi": "^21.3.2",
+    "@hapi/joi": "^17.1.1",
+    "email-regex": "^4.0.0"
+  }
+}

@@ -1,0 +1,28 @@
+# ./docker-compose.yml
+
+version: '3'
+
+services:
+  db:
+    image: postgres:14.6-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 1d65bda13cc11462cef6649886cefd2a8cb6
+    volumes:
+      - ./deploy/server/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    ports:
+      - 5432
+    #command: ["postgres", "-c", "log_statement=all"]
+
+  web:
+    build:
+      context: ./deploy/server/
+    depends_on:
+      - db
+    volumes:
+      - ./deploy/server/www:/var/www
+    environment:
+      - DB_USER=books
+      - DB_PWD=03a4043f149bd9eaab00fe7004c956f67421
+    ports:
+      - 80:80

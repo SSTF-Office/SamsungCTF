@@ -1,0 +1,16 @@
+# sudo docker run --name timming_proxy --rm -v /var/run/docker.sock:/var/run/docker.sock -p 31339:31339 -idt timming_proxy
+version: '3'
+services:
+  app:
+    build: .
+    image: heapster_proxy
+    container_name: heapster_proxy
+    restart: always
+#    command: ["socat","TCP-LISTEN:31338,reuseaddr,fork","EXEC:/exec.sh"]
+    ports:
+     - 31339:31339
+    read_only: true
+    volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
+
+

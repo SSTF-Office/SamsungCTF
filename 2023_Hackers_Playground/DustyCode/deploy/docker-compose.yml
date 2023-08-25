@@ -1,0 +1,9 @@
+version: '3'
+services:
+  dusty-code:
+    image: sctf-dusty-code
+    build:
+      context: .
+    container_name: dusty-code
+    ports:
+      - "3000:3000"

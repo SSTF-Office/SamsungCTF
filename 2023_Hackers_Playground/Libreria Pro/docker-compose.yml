@@ -1,0 +1,35 @@
+# ./docker-compose.yml
+
+version: '2.1'
+
+services:
+  db:
+    image: postgres:14.6-alpine
+    restart: always
+    environment:
+      PGUSER: postgres
+      POSTGRES_PASSWORD: 1d65bda13cc11462cef6649886cefd2a8cb6
+    volumes:
+      - ./deploy/server/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./deploy/server/post.sql:/root/post.sql:ro
+    ports:
+      - 5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    #command: ["postgres", "-c", "log_statement=all"]
+
+  web:
+    build:
+      context: ./deploy/server/
+    environment:
+      - DB_USER=books
+      - DB_PWD=03a4043f149bd9eaab00fe7004c956f67421
+    ports:
+      - "80:8000"
+    command: bash -c "python3 manage.py makemigrations && python3 manage.py migrate && python3 manage.py loaddata init.json && rm -f init.json && python3 manage.py collectstatic --noinput && python3 manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      db:
+        condition: service_healthy

@@ -1,0 +1,16 @@
+[
+    {
+        "name": "token",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiYWRtaW4iOnRydWUsImlhdCI6MTY4ODQ2MTU4MiwiZXhwIjoxNjk4ODQ3OTgyfQ.WzbZP4RsyZjP3Ne45_dusSO0FCdtap6uzVZl_EyIrkU",
+        "domain": "rotto",
+        "path": "/",
+        "httpOnly": true,
+        "secure": false
+    },
+    {
+        "name": "flag",
+        "value": "SCTF{ThisisFlag}",
+        "domain": "rotto",
+        "path": "/"
+    }
+]

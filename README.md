@@ -12,6 +12,7 @@
 | [2020 Hacker's Playground](./2020_Hackers_Playground) | 2020.08.17 10:00 - 16:00 (6 Hr) |
 | [2021 Hacker's Playground](./2021_Hackers_Playground) | 2021.08.16 15:00 ~ 08.17 15:00 (24 Hr) |
 | [2022 Hacker's Playground](./2022_Hackers_Playground) | 2022.08.22 15:00 ~ 08.23 15:00 (24 Hr) |
+| [2022 Hacker's Playground](./2023_Hackers_Playground) | 2023.08.19 09:00 ~ 21:00 (12 Hr) |
 
 
 

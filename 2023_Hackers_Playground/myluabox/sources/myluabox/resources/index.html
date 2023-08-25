@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+var jwt = localStorage.getItem("jwt");
+if (jwt == null) {
+  window.location.href = 'login.html';
+}
+
+function loadUser() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.open("POST", "/api/user");
+  xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  xhttp.setRequestHeader("Authorization", "Bearer "+jwt);
+  xhttp.send();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4) {
+      const objects = JSON.parse(this.responseText);
+      if (objects['status'] == 'ok') {
+        document.getElementById("username").innerHTML = objects["username"];
+      }
+    }
+  };
+}
+
+loadUser();
+
+function mybox() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.open("POST", "/api/box");
+  xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  xhttp.setRequestHeader("Authorization", "Bearer "+jwt);
+  let inputString = prompt('Please input your code', 'print("Hello World")');
+  if (inputString) {
+    xhttp.send(JSON.stringify({
+      "code": inputString
+    }));
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4) {
+        const objects = JSON.parse(this.responseText);
+        alert(objects["message"]);
+      }
+    };
+  }
+}
+function logout() {
+  localStorage.removeItem("jwt");
+  window.location.href = 'login.html';
+}
+</script>
+<style>
+form {
+  border: 3px solid #f1f1f1;
+}
+.container {
+  padding: 16px;
+}
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+button:hover {
+  opacity: 0.8;
+}
+</style>
+</head>
+<body>
+  <form>
+    <div class="container">
+      <h1>Hello, <p id="username">-</p></h1>
+      <button type="button" onclick="mybox()">My Box</button>
+      <button type="button" onclick="logout()">Logout</button>
+    </div>
+  </form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+
+<head>
+  <title>Rock, Paper, Scissors</title>
+  <link rel="stylesheet" href="/public/css/style.css">
+</head>
+
+<body>
+  <h1>Sign In</h1>
+  <div class="mode-cont cont">
+    <div class="cont">
+      <label>Username : </label>
+      <input id="username" name="username" placeholder="username" />
+    </div>
+    <div class="cont">
+      <label>Password : </label>
+      <input id="password" name="password" type="password" placeholder="password" />
+    </div>
+    <button onclick="signIn()">Submit</button>
+  </div>
+</body>
+<script>
+  function signIn() {
+    let username = document.getElementById('username').value;
+    let password = document.getElementById('password').value;
+    let data = {
+      username: username,
+      password: password
+    };
+    fetch('/user/signin', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    }).then(res => res.json())
+      .then(res => {
+        if (res.message === 'ok') {
+          location.href = '/game';
+        } else {
+          alert(res.message);
+        }
+      })
+
+  }
+</script>
+
+</html>

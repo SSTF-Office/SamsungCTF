@@ -1,0 +1,23 @@
+{
+  "name": "gateway",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "http-proxy-middleware": "^2.0.6",
+    "js-yaml": "^4.1.0",
+    "jsonwebtoken": "^9.0.0",
+    "node-fetch": "^2.6.12"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

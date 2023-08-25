@@ -1,0 +1,47 @@
+body {
+    margin: 0 auto;
+    width: 500px;
+    padding-top: 100px;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+.sg-cont {
+    border: 1px solid black;
+    padding: 15px;
+    text-align: left;
+}
+
+.hide {
+    display: none;
+}
+
+.cont {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.game-options {
+    margin-left: 5px;
+    display: inline-block;
+}
+
+.strategy-content {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.game-node {
+    margin-bottom: 2px;
+}
+
+.gnb {
+    text-align: right;
+}
+
+.strategy-list {
+    cursor: pointer;
+}

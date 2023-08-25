@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+var jwt = localStorage.getItem("jwt");
+if (jwt != null) {
+  window.location.href = 'index.html'
+}
+function login() {
+  const username = document.getElementById("uname").value;
+  const password = document.getElementById("psw").value;
+
+  const xhttp = new XMLHttpRequest();
+  xhttp.open("POST", "/api/login");
+  xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  xhttp.send(JSON.stringify({
+    "username": username,
+    "password": password
+  }));
+
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4) {
+      const objects = JSON.parse(this.responseText);
+      console.log(objects);
+      if (objects['status'] == 'ok') {
+        localStorage.setItem("jwt", objects['accessToken']);
+        window.location.href = 'index.html';
+      } else {
+        alert(objects['message']);
+      }
+    }
+  };
+}
+</script>
+<style>
+form {
+  border: 3px solid #f1f1f1;
+}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+button:hover {
+  opacity: 0.8;
+}
+.container {
+  padding: 16px;
+}
+</style>
+</style>
+</head>
+<body>
+  <form>
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" id="uname" value="admin" required>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" id="psw" required>
+      <button type="button" onclick="login()">Login</button>
+    </div>
+  </form>
+</body>
+</html>

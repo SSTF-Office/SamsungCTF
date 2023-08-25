@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo
+  bot:
+    build:
+      context: browser_bot
+    cap_add:
+      - SYS_ADMIN
+    restart: on-failure
+  rotto:
+    build:
+      context: rotto
+    depends_on:
+      - mongo
+    environment:
+      - JWT_SECRET=jwt_secret
+      - MONGODB_HOST=mongo:27017
+      - DATABASE=game
+      - BOT_PORT=1338
+      - BOT_HOST=bot
+      - DOMAIN=127.0.0.1:3001
+      # - PRODUCTION=true
+    ports: 
+      - 34343:3001

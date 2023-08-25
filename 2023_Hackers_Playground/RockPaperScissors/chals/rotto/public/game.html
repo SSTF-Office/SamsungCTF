@@ -1,0 +1,48 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="/public/css/style.css">
+  <title>Rock, Paper, Scissors</title>
+  <script src="/public/js/main.js"> </script>
+</head>
+
+<body>
+  <div class="gnb" id="gnb">
+    Hello, Someone
+  </div>
+  <h1>Rock, Paper, Scissors</h1>
+  <div class="mode-cont cont">
+    <button onclick="changeMode('single')">Single Play</button>
+    <button onclick="changeMode('new-strategy')">Make Strategy</button>
+    <button onclick="changeMode('list-strategy')">List Strategies</button>
+  </div>
+
+  <div id="score" class="score-cont cont">
+  </div>
+  <div class="turn-cont cont" id="turn-cont">
+    <button id="rock" onclick="onButtonClick(this.id)" class="selectTurn">Rock</button>
+    <button id="paper" onclick="onButtonClick(this.id)" class="selectTurn">Paper</button>
+    <button id="scissors" onclick="onButtonClick(this.id)" class="selectTurn">Scissors</button>
+  </div>
+  <div id="strategy-cont" class="hide sg-cont cont">
+    <h4>Strategy</h4>
+    <div id="strategy-name-cont">
+      <label>Name : </label><input id="strategy-name">
+    </div>
+    <div id="strategy" class="strategy-content">
+    </div>
+  </div>
+  </div>
+  <div id="result" class="cont">
+  </div>
+  <div id="save-cont" class="hide cont">
+    <button onclick="saveStrategy()">Save</button>
+    <button onclick="clearSG(true)">Clear</button>
+  </div>
+  <div id="run-cont" class="hide cont">
+    <button onclick="testStrategy()">Test Strategy</button>
+    <button onclick="sendToBot()">Send to bot</button>
+  </div>
+</body>
+
+</html>

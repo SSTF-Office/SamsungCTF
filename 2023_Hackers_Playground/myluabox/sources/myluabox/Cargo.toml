@@ -1,0 +1,21 @@
+[package]
+name = "myluabox"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+hyper = { version = "0.14", features = ["full"] }
+tokio = { version = "1.28", features = ["rt", "macros", "rt-multi-thread", "sync"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+jsonwebtoken = "*"
+thiserror = "*"
+futures = "0.3.5"
+wait-timeout = "*"
+rust-embed = {version="6.6.1", features=["interpolate-folder-path"]}
+
+[profile.release]
+strip = true
+

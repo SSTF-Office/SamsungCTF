@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  apiproxy:
+    image: nginx
+    ports:
+      - "8000:80"
+    volumes:
+      - ./api-nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./front:/usr/share/nginx/html:ro
+    environment:
+      - NGINX_PORT=80
+    depends_on:
+      - gateway
+
+  msproxy:
+    image: nginx
+    volumes:
+      - ./ms-nginx.conf:/etc/nginx/nginx.conf:ro
+    environment:
+      - NGINX_PORT=80
+    depends_on:
+      - secret
+      - user
+      - order
+
+  secret:
+    build:
+      context: ms-secret
+    environment:
+      - JWT_SECRET_KEY=ASDZFHL.KWLJFYPOJWEPMP3OMXPfJCVJKLWEJL_2
+
+  user:
+    build:
+      context: ms-user
+    environment:
+      - ADMIN_PASSWD=_LASKDJFowiqinxjkv83ih1m1..vdo.lwry8o23y89~~!@
+
+  order:
+    build:
+      context: ms-order
+    environment:
+      - FLAG=SCTF{InC0nSistenCy&M1sC0nfigur4ti0n_make_it_vulnerable}
+
+  gateway:
+    build:
+      context: gateway
+    depends_on:
+      - msproxy
+

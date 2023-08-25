@@ -1,0 +1,11 @@
+FROM ubuntu:22.04
+RUN apt-get update
+RUN apt-get -y install --no-install-recommends socat
+
+COPY ./chal /chal
+COPY ./flag /flag
+
+RUN chmod +x /chal
+RUN chmod 400 ./flag
+ENTRYPOINT ["timeout","180","/chal"]
+

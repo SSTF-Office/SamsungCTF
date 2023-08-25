@@ -1,0 +1,34 @@
+{
+  "name": "rotto",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with Fastify-CLI.",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tap \"test/**/*.test.js\"",
+    "start": "fastify start -l info app.js",
+    "dev": "fastify start -w -l info -P app.js -p 3001 -a 0.0.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/autoload": "^5.0.0",
+    "@fastify/cookie": "^8.3.0",
+    "@fastify/jwt": "^7.1.0",
+    "@fastify/mongodb": "^7.0.0",
+    "@fastify/sensible": "^5.0.0",
+    "@fastify/static": "^6.10.2",
+    "fastify": "^4.0.0",
+    "fastify-cli": "^5.7.1",
+    "fastify-plugin": "^4.0.0",
+    "validator": "^13.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.5",
+    "tap": "^16.1.0",
+    "typescript": "^5.1.3"
+  }
+}
