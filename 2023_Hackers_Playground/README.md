@@ -8,9 +8,9 @@ including exploits and writeups.
 
 | Rank | Team          | Writeup                                                      |
 | ---- | ------------- | ------------------------------------------------------------ |
-| 1    | The Duck      | [File](./TopRankersWriteups/SSTF 2023 The Duck - Write Up.pdf), [Link](https://github.com/theori-io/ctf/blob/master/2023/SSTF2023/SSTF%202023%20The%20Duck%20-%20Write%20Up.pdf) |
-| 2    | Super Guesser | [File](./TopRankersWriteups/SSTF 2023 Super Guesser Write up.md), [Link](https://hackmd.io/8aXIvEpVRSqsc7i_WhTpWA?view) |
-| 3    | Cy + Kr       | [File](./TopRankersWriteups/SSTF 2023 Write-Up 5228d86e56b64d0fbd25e85316aa55bf.md) |
+| 1    | The Duck      | [File](./TopRankersWriteups/SSTF%202023%20The%20Duck%20-%20Write%20Up.pdf), [Link](https://github.com/theori-io/ctf/blob/master/2023/SSTF2023/SSTF%202023%20The%20Duck%20-%20Write%20Up.pdf) |
+| 2    | Super Guesser | [File](./TopRankersWriteups/SSTF%202023%20Super%20Guesser%20Write%20up.md), [Link](https://hackmd.io/8aXIvEpVRSqsc7i_WhTpWA?view) |
+| 3    | Cy + Kr       | [File](./TopRankersWriteups/SSTF%202023%20Write-Up%205228d86e56b64d0fbd25e85316aa55bf.md) |
 
 
 
